@@ -1,0 +1,999 @@
+{
+  "sequence": [
+    "video-config",
+    "video-consent",
+    "studypreviewandinstructions",
+    "final-instructions",
+    "introvideo",
+    "intropractice",
+    "intropracticefeedback",
+    "alltrials",
+    "trialalldone",
+    "exit-survey"
+  ],
+  "frames": {
+    "video-config": {
+      "kind": "exp-video-config",
+      "troubleshootingIntro": "If you're having any trouble or would like us to walk you through setup, please email andrina.template@lookit.edu."
+    },
+    "studypreviewandinstructions": {
+      "kind": "exp-lookit-stimuli-preview",
+      "blocks": [
+        {
+          "emph": true,
+          "title": "Let's play pretend! Study overview"
+        },
+        {
+          "emph": true,
+          "text": "Reminder: Your child does not need to be with you until the videos begin. Now, let's go over what will happen!"
+        },
+        {
+          "text": "During this study, we will present 8 different pretend play scenarios. In each scene, your child will generate ideas for what a given object could be in the pretend world."
+        },
+        {
+          "text": "Before we start, if you'd like to preview the sort of images that your child will see, you can do that now. Importantly, you should watch the sample video without your child."
+        }
+      ],
+      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/master/condition-generate/",
+      "stimuli": [
+        {
+          "video": "PP Stimuli Preview Condition 2",
+          "caption": "Here's a sample of what the images and choices will look like:"
+        }
+      ],
+      "videoTypes": ["mp4"],
+      "skipButtonText": "Skip preview",
+      "previewButtonText": "I'd like to preview the videos",
+      "doRecording": false
+    },
+    "final-instructions": {
+      "kind": "exp-lookit-instructions",
+      "blocks": [
+        {
+          "title": "Parent's role",
+          "listblocks": [
+            {
+              "text": "Please just wait for your child to answer and say 'Okay!' when they're done sharing - don't give any hints or say whether you agree!"
+            },
+            {
+              "text": "You can always click 'Replay' to repeat the question for them."
+            },
+            {
+              "text": "If your child can click on their own, let them click the Next button. If they can't click on their own, you can click for them."
+            }
+          ]
+        },
+        {
+          "title": "Pausing and stopping",
+          "listblocks": [
+            {
+              "text": "You can pause the study by pressing the space key on the keyboard. Feel free to take a break if your child gets fussy or distracted, or you need to attend to something for a moment."
+            },
+            {
+              "text": "If you need to end the study early, try closing the window and you should see an ‘exit’ option pop up. You’ll be prompted to note any technical problems you might be experiencing and to select a privacy level for your video."
+            }
+          ]
+        },
+        {
+          "title": "Test your audio",
+          "text": "Please turn the volume up so it's easy to hear but still comfortable.",
+          "mediaBlock": {
+            "text": "Make sure you and your child can hear the audio before you begin!",
+            "isVideo": false,
+            "sources": [
+              {
+                "src": "https://raw.githubusercontent.com/ncuneo0711/lookit-stimuli-template/master/mp3/TestAudio.mp3",
+                "type": "audio/mp3"
+              },
+              {
+                "src": "https://raw.githubusercontent.com/ncuneo0711/lookit-stimuli-template/master/ogg/TestAudio.ogg",
+                "type": "audio/ogg"
+              }
+            ],
+            "mustPlay": true,
+            "warningText": "Please try playing the sample audio."
+          }
+        }
+      ],
+      "showWebcam": true,
+      "webcamBlocks": [
+        {
+          "title": "Camera position",
+          "listblocks": [
+            {
+              "text": "Try to position yourselves so that we can see your child throughout the study."
+            },
+            {
+              "text": "Don’t worry if your child isn’t looking at the screen the entire time! What's important is that the child is in front of the screen the whole time and can make the choices. We made it as short as we could, in the hopes your child won't get bored!"
+            }
+          ]
+        }
+      ],
+      "nextButtonText": "Next"
+    },
+    "introvideo": {
+      "kind": "exp-lookit-video",
+      "video": {
+        "loop": false,
+        "position": "fill",
+        "source": "generategameintro"
+      },
+      "backgroundColor": "white",
+      "autoProceed": false,
+      "showPreviousButton": false,
+      "requireVideoCount": 1,
+      "doRecording": false,
+      "frameOffsetAfterPause": 0,
+      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/master/condition-generate/",
+      "videoTypes": ["mp4"]
+    },
+    "intropractice": {
+      "kind": "exp-lookit-images-audio",
+      "audio": "generate-warmup (enhanced)",
+      "images": [
+        {
+          "id": "meadowslide",
+          "src": "introgame.png",
+          "position": "fill"
+        }
+      ],
+      "backgroundColor": "white",
+      "autoProceed": false,
+      "showPreviousButton": false,
+      "doRecording": true,
+      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/master/condition-generate/"
+    },
+    "intropracticefeedback": {
+      "kind": "exp-lookit-images-audio",
+      "audio": "generate-warmup2 (enhanced)",
+      "images": [
+        {
+          "id": "meadowslidefeedback",
+          "src": "introgame.png",
+          "position": "fill"
+        }
+      ],
+      "backgroundColor": "white",
+      "autoProceed": false,
+      "showPreviousButton": false,
+      "doRecording": true,
+      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/master/condition-generate/"
+    },
+    "video-consent": {
+      "kind": "exp-lookit-video-consent",
+      "template": "consent_005",
+      "PIName": "PI Name",
+      "institution": "Harvard University",
+      "PIContact": "PI Contact",
+      "purpose": "In this study, we want to learn about how children think about pretend play and what shapes their pretend play preferences.",
+      "procedures": "Your child will play a short game where they get to play pretend! In the game, your child will see some fun cartoon pictures, and then get to choose which imaginary things they would want to play pretend with!",
+      "risk_statement": "There are no expected risks if you participate in the study.",
+      "payment": "After you finish the study, we will email you a $5 Amazon gift card within approximately one week. To be eligible for the gift card, your child must meet all eligibility criteria (e.g., be in the age range for this study), you need to submit a valid consent statement, and we need to see that there is a child with you. Additionally, your child may only participate in this study once in order to be eligible for compensation. However, even if you do not finish the whole study or we are not able to use your child's data, we will still send a gift card! There are no other direct benefits to you or your child from participating, but we hope you will enjoy the experience.",
+      "datause": "We are primarily interested in the ratings your child provides. A research assistant may also watch your videos to code any spontaneous speech your child generates during the task.",
+      "include_databrary": true,
+      "gdpr": false,
+      "research_rights_statement": "You are not waiving any legal claims, rights or remedies because of your participation in this research study.  If you feel you have been treated unfairly, or you have questions regarding your rights as a research subject, you may contact Harvard's Committee on the Use of Human Subjects (cuhs@harvard.edu)."
+    },
+    "alltrials": {
+      "kind": "choice",
+      "sampler": "random-parameter-set",
+      "frameList": [
+        {
+          "audio": "AUDIO1",
+          "images": [
+            {
+              "id": "slide1",
+              "src": "scene1",
+              "top": "13.5",
+              "left": "35",
+              "width": "60"
+            },
+            {
+              "id": "option1",
+              "src": "stimuli1",
+              "position": "left",
+              "displayDelayMs": "delay1"
+            }
+          ],
+          "parentTextBlock": {
+            "css": {
+              "font-size": "13pt",
+              "padding": "0.5em"
+            },
+            "text": "Please just say 'Okay!' when your child answers - don't give any hints or say whether you agree!\nIf your child can click on their own, let them click one of the answer choices, then click the Next button. If they can't click on their own, you can click for them.",
+            "title": "For Parents"
+          }
+        },
+        {
+          "audio": "AUDIO2",
+          "images": [
+            {
+              "id": "slide2",
+              "src": "scene2",
+              "top": "13.5",
+              "left": "35",
+              "width": "60"
+            },
+            {
+              "id": "option2",
+              "src": "stimuli2",
+              "position": "left",
+              "displayDelayMs": "delay2"
+            }
+          ],
+          "parentTextBlock": {
+            "css": {
+              "font": "13pt sans-serif",
+              "padding": "0.5em"
+            },
+            "text": "Please just say 'Okay!' when your child answers - don't give any hints or say whether you agree!\nIf your child can click on their own, let them click one of the answer choices, then click the Next button. If they can't click on their own, you can click for them.",
+            "title": "For Parents"
+          }
+        },
+        {
+          "audio": "AUDIO3",
+          "images": [
+            {
+              "id": "slide3",
+              "src": "scene3",
+              "top": "13.5",
+              "left": "35",
+              "width": "60"
+            },
+            {
+              "id": "option3",
+              "src": "stimuli3",
+              "position": "left",
+              "displayDelayMs": "delay3"
+            }
+          ],
+          "parentTextBlock": {
+            "css": {
+              "font-size": "13pt",
+              "padding": "0.5em"
+            },
+            "text": "Please just say 'Okay!' when your child answers - don't give any hints or say whether you agree!\nIf your child can click on their own, let them click one of the answer choices, then click the Next button. If they can't click on their own, you can click for them.",
+            "title": "For Parents"
+          }
+        },
+        {
+          "audio": "AUDIO4",
+          "images": [
+            {
+              "id": "slide4",
+              "src": "scene4",
+              "top": "13.5",
+              "left": "35",
+              "width": "60"
+            },
+            {
+              "id": "option4",
+              "src": "stimuli4",
+              "position": "left",
+              "displayDelayMs": "delay4"
+            }
+          ],
+          "parentTextBlock": {
+            "css": {
+              "font-size": "13pt",
+              "padding": "0.5em"
+            },
+            "text": "Please just say 'Okay!' when your child answers - don't give any hints or say whether you agree!\nIf your child can click on their own, let them click one of the answer choices, then click the Next button. If they can't click on their own, you can click for them.",
+            "title": "For Parents"
+          }
+        },
+        {
+          "audio": "AUDIO5",
+          "images": [
+            {
+              "id": "slide5",
+              "src": "scene5",
+              "top": "13.5",
+              "left": "35",
+              "width": "60"
+            },
+            {
+              "id": "option5",
+              "src": "stimuli5",
+              "position": "left",
+              "displayDelayMs": "delay5"
+            }
+          ],
+          "parentTextBlock": {
+            "css": {
+              "font-size": "13pt",
+              "padding": "0.5em"
+            },
+            "text": "Please just say 'Okay!' when your child answers - don't give any hints or say whether you agree!\nIf your child can click on their own, let them click one of the answer choices, then click the Next button. If they can't click on their own, you can click for them.",
+            "title": "For Parents"
+          }
+        },
+        {
+          "audio": "AUDIO6",
+          "images": [
+            {
+              "id": "slide6",
+              "src": "scene6",
+              "top": "13.5",
+              "left": "35",
+              "width": "60"
+            },
+            {
+              "id": "option6",
+              "src": "stimuli6",
+              "position": "left",
+              "displayDelayMs": "delay6"
+            }
+          ],
+          "parentTextBlock": {
+            "css": {
+              "font-size": "13pt",
+              "padding": "0.5em"
+            },
+            "text": "Please just say 'Okay!' when your child answers - don't give any hints or say whether you agree!\nIf your child can click on their own, let them click one of the answer choices, then click the Next button. If they can't click on their own, you can click for them.",
+            "title": "For Parents"
+          }
+        },
+        {
+          "audio": "AUDIO7",
+          "images": [
+            {
+              "id": "slide7",
+              "src": "scene7",
+              "top": "13.5",
+              "left": "35",
+              "width": "60"
+            },
+            {
+              "id": "option7",
+              "src": "stimuli7",
+              "position": "left",
+              "displayDelayMs": "delay7"
+            }
+          ],
+          "parentTextBlock": {
+            "css": {
+              "font-size": "13pt",
+              "padding": "0.5em"
+            },
+            "text": "Please just say 'Okay!' when your child answers - don't give any hints or say whether you agree!\nIf your child can click on their own, let them click one of the answer choices, then click the Next button. If they can't click on their own, you can click for them.",
+            "title": "For Parents"
+          }
+        },
+        {
+          "audio": "AUDIO8",
+          "images": [
+            {
+              "id": "slide8",
+              "src": "scene8",
+              "top": "13.5",
+              "left": "35",
+              "width": "60"
+            },
+            {
+              "id": "option8",
+              "src": "stimuli8",
+              "position": "left",
+              "displayDelayMs": "delay8"
+            }
+          ],
+          "parentTextBlock": {
+            "css": {
+              "font-size": "13pt",
+              "padding": "0.5em"
+            },
+            "text": "Please just say 'Okay!' when your child answers - don't give any hints or say whether you agree!\nIf your child can click on their own, let them click one of the answer choices, then click the Next button. If they can't click on their own, you can click for them.",
+            "title": "For Parents"
+          }
+        }
+      ],
+      "parameterSets": [
+        {
+          "scene1": "doctor.png",
+          "scene2": "kitchen.png",
+          "scene3": "grocerystore.png",
+          "scene4": "performancehall.png",
+          "scene5": "woods.png",
+          "scene6": "pirateship.png",
+          "scene7": "volcano.png",
+          "scene8": "runway.png",
+          "stimuli1": "longsocks.png",
+          "stimuli2": "stringlights.png",
+          "stimuli3": "tennisball.png",
+          "stimuli4": "sponge.png",
+          "stimuli5": "blanket.png",
+          "stimuli6": "frisbee.png",
+          "stimuli7": "icecreamscooper.png",
+          "stimuli8": "vacuumtube.png",
+          "AUDIO1": "generate-good-doctors-longsocks (enhanced)",
+          "AUDIO2": "generate-bad-cooks-hanger (enhanced)",
+          "AUDIO3": "generate-good-shoppers-ball (enhanced)",
+          "AUDIO4": "generate-bad-magicians-sponge (enhanced)",
+          "AUDIO5": "generate-good-campers-blanket (enhanced)",
+          "AUDIO6": "generate-bad-pirates-frisbee (enhanced)",
+          "AUDIO7": "generate-good-explorers-icecreamscoop (enhanced)",
+          "AUDIO8": "generate-bad-fashionmodels-vacuumtube (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        },
+        {
+          "scene1": "concertstage.png",
+          "scene2": "desert.png",
+          "scene3": "castle.png",
+          "scene4": "constructionsite.png",
+          "scene5": "outerspace.png",
+          "scene6": "gardenteaparty.png",
+          "scene7": "trainstation.png",
+          "scene8": "firestation.png",
+          "stimuli1": "longsocks.png",
+          "stimuli2": "stringlights.png",
+          "stimuli3": "tennisball.png",
+          "stimuli4": "sponge.png",
+          "stimuli5": "blanket.png",
+          "stimuli6": "frisbee.png",
+          "stimuli7": "icecreamscooper.png",
+          "stimuli8": "vacuumtube.png",
+          "AUDIO1": "generate-bad-musicians-longsocks (enhanced)",
+          "AUDIO2": "generate-good-cowboys-stringlights (enhanced)",
+          "AUDIO3": "generate-bad-knights-yellowball (enhanced)",
+          "AUDIO4": "generate-good-construction-sponge (enhanced)",
+          "AUDIO5": "generate-bad-astronaut-blanket (enhanced)",
+          "AUDIO6": "generate-good-teaparty-frisbee (enhanced)",
+          "AUDIO7": "generate-bad-train-icecreamscoop (enhanced)",
+          "AUDIO8": "generate-good-firefighter-vacuumtube (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        },
+        {
+          "scene1": "grocerystore.png",
+          "scene2": "performancehall.png",
+          "scene3": "doctor.png",
+          "scene4": "kitchen.png",
+          "scene5": "volcano.png",
+          "scene6": "runway.png",
+          "scene7": "woods.png",
+          "scene8": "pirateship.png",
+          "stimuli1": "tennisball.png",
+          "stimuli2": "sponge.png",
+          "stimuli3": "longsocks.png",
+          "stimuli4": "stringlights.png",
+          "stimuli5": "icecreamscooper.png",
+          "stimuli6": "vacuumtube.png",
+          "stimuli7": "blanket.png",
+          "stimuli8": "frisbee.png",
+          "AUDIO1": "generate-good-shoppers-ball (enhanced)",
+          "AUDIO2": "generate-bad-magicians-sponge (enhanced)",
+          "AUDIO3": "generate-good-doctors-longsocks (enhanced)",
+          "AUDIO4": "generate-good-cooks-hanger (enhanced)",
+          "AUDIO5": "generate-good-explorers-icecreamscoop (enhanced)",
+          "AUDIO6": "generate-bad-fashionmodels-vacuumtube (enhanced)",
+          "AUDIO7": "generate-good-campers-blanket (enhanced)",
+          "AUDIO8": "generate-bad-pirates-frisbee (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        },
+        {
+          "scene1": "grocerystore.png",
+          "scene2": "performancehall.png",
+          "scene3": "doctor.png",
+          "scene4": "kitchen.png",
+          "scene5": "volcano.png",
+          "scene6": "runway.png",
+          "scene7": "woods.png",
+          "scene8": "pirateship.png",
+          "stimuli1": "wirehanger.png",
+          "stimuli2": "featherduster.png",
+          "stimuli3": "broom.png",
+          "stimuli4": "hairbrush.png",
+          "stimuli5": "keys.png",
+          "stimuli6": "pokerchips.png",
+          "stimuli7": "helmet.png",
+          "stimuli8": "papertoweltube.png",
+          "AUDIO1": "generate-bad-shoppers-hanger (enhanced)",
+          "AUDIO2": "generate-good-magicians-featherduster (enhanced)",
+          "AUDIO3": "generate-bad-doctor-broom (enhanced)",
+          "AUDIO4": "generate-good-cooks-brush (enhanced)",
+          "AUDIO5": "generate-bad-explorers-keys (enhanced)",
+          "AUDIO6": "generate-good-fashionmodel-pokerchips (enhanced)",
+          "AUDIO7": "generate-bad-campers-helmet (enhanced)",
+          "AUDIO8": "generate-good-pirates-papertoweltube (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        },
+        {
+          "scene1": "outerspace.png",
+          "scene2": "gardenteaparty.png",
+          "scene3": "trainstation.png",
+          "scene4": "firestation.png",
+          "scene5": "concertstage.png",
+          "scene6": "desert.png",
+          "scene7": "castle.png",
+          "scene8": "constructionsite.png",
+          "stimuli1": "helmet.png",
+          "stimuli2": "papertoweltube.png",
+          "stimuli3": "keys.png",
+          "stimuli4": "pokerchips.png",
+          "stimuli5": "broom.png",
+          "stimuli6": "hairbrush.png",
+          "stimuli7": "wirehanger.png",
+          "stimuli8": "featherduster.png",
+          "AUDIO1": "generate-good-astronaut-helmet (enhanced)",
+          "AUDIO2": "generate-bad-teaparty-papertoweltube (enhanced)",
+          "AUDIO3": "generate-good-train-keys (enhanced)",
+          "AUDIO4": "generate-bad-firefighters-pokerchips (enhanced)",
+          "AUDIO5": "generate-good-musicians-broom (enhanced)",
+          "AUDIO6": "generate-bad-cowboys-hairbrush (enhanced)",
+          "AUDIO7": "generate-good-knights-wirehanger (enhanced)",
+          "AUDIO8": "generate-bad-construction-featherduster (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        },
+        {
+          "scene1": "woods.png",
+          "scene2": "pirateship.png",
+          "scene3": "volcano.png",
+          "scene4": "runway.png",
+          "scene5": "doctor.png",
+          "scene6": "kitchen.png",
+          "scene7": "grocerystore.png",
+          "scene8": "performancehall.png",
+          "stimuli1": "helmet.png",
+          "stimuli2": "papertoweltube.png",
+          "stimuli3": "keys.png",
+          "stimuli4": "pokerchips.png",
+          "stimuli5": "broom.png",
+          "stimuli6": "hairbrush.png",
+          "stimuli7": "wirehanger.png",
+          "stimuli8": "featherduster.png",
+          "AUDIO1": "generate-bad-campers-helmet (enhanced)",
+          "AUDIO2": "generate-good-pirates-papertoweltube (enhanced)",
+          "AUDIO3": "generate-bad-explorers-keys (enhanced)",
+          "AUDIO4": "generate-good-fashionmodel-pokerchips (enhanced)",
+          "AUDIO5": "generate-bad-doctor-broom (enhanced)",
+          "AUDIO6": "generate-good-cooks-brush (enhanced)",
+          "AUDIO7": "generate-bad-shoppers-hanger (enhanced)",
+          "AUDIO8": "generate-good-magicians-featherduster (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        },
+        {
+          "scene1": "trainstation.png",
+          "scene2": "firestation.png",
+          "scene3": "outerspace.png",
+          "scene4": "gardenteaparty.png",
+          "scene5": "castle.png",
+          "scene6": "constructionsite.png",
+          "scene7": "concertstage.png",
+          "scene8": "desert.png",
+          "stimuli1": "keys.png",
+          "stimuli2": "pokerchips.png",
+          "stimuli3": "helmet.png",
+          "stimuli4": "papertoweltube.png",
+          "stimuli5": "wirehanger.png",
+          "stimuli6": "featherduster.png",
+          "stimuli7": "broom.png",
+          "stimuli8": "hairbrush.png",
+          "AUDIO1": "generate-good-train-keys (enhanced)",
+          "AUDIO2": "generate-bad-firefighters-pokerchips (enhanced)",
+          "AUDIO3": "generate-good-astronaut-helmet (enhanced)",
+          "AUDIO4": "generate-bad-teaparty-papertoweltube (enhanced)",
+          "AUDIO5": "generate-good-knights-wirehanger (enhanced)",
+          "AUDIO6": "generate-bad-construction-featherduster (enhanced)",
+          "AUDIO7": "generate-good-musicians-broom (enhanced).",
+          "AUDIO8": "generate-bad-cowboys-hairbrush (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        },
+        {
+          "scene1": "trainstation.png",
+          "scene2": "firestation.png",
+          "scene3": "outerspace.png",
+          "scene4": "gardenteaparty.png",
+          "scene5": "castle.png",
+          "scene6": "constructionsite.png",
+          "scene7": "concertstage.png",
+          "scene8": "desert.png",
+          "stimuli1": "icecreamscooper.png",
+          "stimuli2": "vacuumtube.png",
+          "stimuli3": "blanket.png",
+          "stimuli4": "frisbee.png",
+          "stimuli5": "tennisball.png",
+          "stimuli6": "sponge.png",
+          "stimuli7": "longsocks.png",
+          "stimuli8": "stringlights.png",
+          "AUDIO1": "generate-bad-train-icecreamscoop (enhanced)",
+          "AUDIO2": "generate-good-firefighter-vacuumtube (enhanced)",
+          "AUDIO3": "generate-bad-astronaut-blanket (enhanced)",
+          "AUDIO4": "generate-good-teaparty-frisbee (enhanced)",
+          "AUDIO5": "generate-bad-knights-yellowball (enhanced)",
+          "AUDIO6": "generate-good-construction-sponge (enhanced)",
+          "AUDIO7": "generate-bad-musicians-longsocks (enhanced)",
+          "AUDIO8": "generate-good-cowboys-stringlights (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        },
+        {
+          "scene1": "concertstage.png",
+          "scene2": "desert.png",
+          "scene3": "castle.png",
+          "scene4": "constructionsite.png",
+          "scene5": "outerspace.png",
+          "scene6": "gardenteaparty.png",
+          "scene7": "trainstation.png",
+          "scene8": "firestation.png",
+          "stimuli1": "broom.png",
+          "stimuli2": "hairbrush.png",
+          "stimuli3": "wirehanger.png",
+          "stimuli4": "featherduster.png",
+          "stimuli5": "helmet.png",
+          "stimuli6": "papertoweltube.png",
+          "stimuli7": "keys.png",
+          "stimuli8": "pokerchips.png",
+          "AUDIO1": "generate-good-musicians-broom (enhanced)",
+          "AUDIO2": "generate-bad-cowboys-hairbrush (enhanced)",
+          "AUDIO3": "generate-good-knights-wirehanger (enhanced)",
+          "AUDIO4": "generate-bad-construction-featherduster (enhanced)",
+          "AUDIO5": "generate-good-astronaut-helmet (enhanced)",
+          "AUDIO6": "generate-bad-teaparty-papertoweltube (enhanced)",
+          "AUDIO7": "generate-good-train-keys (enhanced)",
+          "AUDIO8": "generate-bad-firefighters-pokerchips (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        },
+        {
+          "scene1": "doctor.png",
+          "scene2": "kitchen.png",
+          "scene3": "grocerystore.png",
+          "scene4": "performancehall.png",
+          "scene5": "woods.png",
+          "scene6": "pirateship.png",
+          "scene7": "volcano.png",
+          "scene8": "runway.png",
+          "stimuli1": "broom.png",
+          "stimuli2": "hairbrush.png",
+          "stimuli3": "wirehanger.png",
+          "stimuli4": "featherduster.png",
+          "stimuli5": "helmet.png",
+          "stimuli6": "papertoweltube.png",
+          "stimuli7": "keys.png",
+          "stimuli8": "pokerchips.png",
+          "AUDIO1": "generate-bad-doctor-broom (enhanced)",
+          "AUDIO2": "generate-good-cooks-brush (enhanced)",
+          "AUDIO3": "generate-bad-shoppers-hanger (enhanced)",
+          "AUDIO4": "generate-good-magicians-featherduster (enhanced)",
+          "AUDIO5": "generate-bad-campers-helmet (enhanced)",
+          "AUDIO6": "generate-good-pirates-papertoweltube (enhanced)",
+          "AUDIO7": "generate-bad-explorers-keys (enhanced)",
+          "AUDIO8": "generate-good-fashionmodel-pokerchips (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        },
+        {
+          "scene1": "castle.png",
+          "scene2": "constructionsite.png",
+          "scene3": "concertstage.png",
+          "scene4": "desert.png",
+          "scene5": "trainstation.png",
+          "scene6": "firestation.png",
+          "scene7": "outerspace.png",
+          "scene8": "gardenteaparty.png",
+          "stimuli1": "wirehanger.png",
+          "stimuli2": "featherduster.png",
+          "stimuli3": "broom.png",
+          "stimuli4": "hairbrush.png",
+          "stimuli5": "keys.png",
+          "stimuli6": "pokerchips.png",
+          "stimuli7": "helmet.png",
+          "stimuli8": "papertoweltube.png",
+          "AUDIO1": "generate-good-knights-wirehanger (enhanced)",
+          "AUDIO2": "generate-bad-construction-featherduster (enhanced)",
+          "AUDIO3": "generate-good-musicians-broom (enhanced)",
+          "AUDIO4": "generate-bad-cowboys-hairbrush (enhanced)",
+          "AUDIO5": "generate-good-train-keys (enhanced)",
+          "AUDIO6": "generate-bad-firefighters-pokerchips (enhanced)",
+          "AUDIO7": "generate-good-astronaut-helmet (enhanced)",
+          "AUDIO8": "generate-bad-teaparty-papertoweltube (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        },
+        {
+          "scene1": "castle.png",
+          "scene2": "constructionsite.png",
+          "scene3": "concertstage.png",
+          "scene4": "desert.png",
+          "scene5": "trainstation.png",
+          "scene6": "firestation.png",
+          "scene7": "outerspace.png",
+          "scene8": "gardenteaparty.png",
+          "stimuli1": "tennisball.png",
+          "stimuli2": "sponge.png",
+          "stimuli3": "longsocks.png",
+          "stimuli4": "stringlights.png",
+          "stimuli5": "icecreamscooper.png",
+          "stimuli6": "vacuumtube.png",
+          "stimuli7": "blanket.png",
+          "stimuli8": "frisbee.png",
+          "AUDIO1": "generate-bad-knights-yellowball (enhanced)",
+          "AUDIO2": "generate-good-construction-sponge (enhanced)",
+          "AUDIO3": "generate-bad-musicians-longsocks (enhanced)",
+          "AUDIO4": "generate-good-cowboys-stringlights (enhanced)",
+          "AUDIO5": "generate-bad-train-icecreamscoop (enhanced)",
+          "AUDIO6": "generate-good-firefighter-vacuumtube (enhanced)",
+          "AUDIO7": "generate-bad-astronaut-blanket (enhanced)",
+          "AUDIO8": "generate-good-teaparty-frisbee (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        },
+        {
+          "scene1": "woods.png",
+          "scene2": "pirateship.png",
+          "scene3": "volcano.png",
+          "scene4": "runway.png",
+          "scene5": "doctor.png",
+          "scene6": "kitchen.png",
+          "scene7": "grocerystore.png",
+          "scene8": "performancehall.png",
+          "stimuli1": "blanket.png",
+          "stimuli2": "frisbee.png",
+          "stimuli3": "icecreamscooper.png",
+          "stimuli4": "vacuumtube.png",
+          "stimuli5": "longsocks.png",
+          "stimuli6": "stringlights.png",
+          "stimuli7": "tennisball.png",
+          "stimuli8": "sponge.png",
+          "AUDIO1": "generate-good-campers-blanket (enhanced)",
+          "AUDIO2": "generate-bad-pirates-frisbee (enhanced)",
+          "AUDIO3": "generate-good-explorers-icecreamscoop (enhanced)",
+          "AUDIO4": "generate-bad-fashionmodels-vacuumtube (enhanced)",
+          "AUDIO5": "generate-good-doctors-longsocks (enhanced)",
+          "AUDIO6": "generate-bad-cooks-hanger (enhanced)",
+          "AUDIO7": "generate-good-shoppers-ball (enhanced)",
+          "AUDIO8": "generate-bad-magicians-sponge (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        },
+        {
+          "scene1": "outerspace.png",
+          "scene2": "gardenteaparty.png",
+          "scene3": "trainstation.png",
+          "scene4": "firestation.png",
+          "scene5": "concertstage.png",
+          "scene6": "desert.png",
+          "scene7": "castle.png",
+          "scene8": "constructionsite.png",
+          "stimuli1": "blanket.png",
+          "stimuli2": "frisbee.png",
+          "stimuli3": "icecreamscooper.png",
+          "stimuli4": "vacuumtube.png",
+          "stimuli5": "longsocks.png",
+          "stimuli6": "stringlights.png",
+          "stimuli7": "tennisball.png",
+          "stimuli8": "sponge.png",
+          "AUDIO1": "generate-bad-astronaut-blanket (enhanced)",
+          "AUDIO2": "generate-good-teaparty-frisbee (enhanced)",
+          "AUDIO3": "generate-bad-train-icecreamscoop (enhanced)",
+          "AUDIO4": "generate-good-firefighter-vacuumtube (enhanced)",
+          "AUDIO5": "generate-bad-musicians-longsocks (enhanced)",
+          "AUDIO6": "generate-good-cowboys-stringlights (enhanced)",
+          "AUDIO7": "generate-bad-knights-yellowball (enhanced)",
+          "AUDIO8": "generate-good-construction-sponge (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        },
+        {
+          "scene1": "volcano.png",
+          "scene2": "runway.png",
+          "scene3": "woods.png",
+          "scene4": "pirateship.png",
+          "scene5": "grocerystore.png",
+          "scene6": "performancehall.png",
+          "scene7": "doctor.png",
+          "scene8": "kitchen.png",
+          "stimuli1": "icecreamscooper.png",
+          "stimuli2": "vacuumtube.png",
+          "stimuli3": "blanket.png",
+          "stimuli4": "frisbee.png",
+          "stimuli5": "tennisball.png",
+          "stimuli6": "sponge.png",
+          "stimuli7": "longsocks.png",
+          "stimuli8": "stringlights.png",
+          "AUDIO1": "generate-good-explorers-icecreamscoop (enhanced)",
+          "AUDIO2": "generate-bad-fashionmodels-vacuumtube (enhanced)",
+          "AUDIO3": "generate-good-campers-blanket (enhanced)",
+          "AUDIO4": "generate-bad-pirates-frisbee (enhanced)",
+          "AUDIO5": "generate-good-shoppers-ball (enhanced)",
+          "AUDIO6": "generate-bad-magicians-sponge (enhanced)",
+          "AUDIO7": "generate-good-doctors-longsocks (enhanced)",
+          "AUDIO8": "generate-bad-cooks-hanger (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        },
+        {
+          "scene1": "volcano.png",
+          "scene2": "runway.png",
+          "scene3": "woods.png",
+          "scene4": "pirateship.png",
+          "scene5": "grocerystore.png",
+          "scene6": "performancehall.png",
+          "scene7": "doctor.png",
+          "scene8": "kitchen.png",
+          "stimuli1": "keys.png",
+          "stimuli2": "pokerchips.png",
+          "stimuli3": "helmet.png",
+          "stimuli4": "papertoweltube.png",
+          "stimuli5": "wirehanger.png",
+          "stimuli6": "featherduster.png",
+          "stimuli7": "broom.png",
+          "stimuli8": "hairbrush.png",
+          "AUDIO1": "generate-bad-explorers-keys (enhanced)",
+          "AUDIO2": "generate-good-fashionmodel-pokerchips (enhanced)",
+          "AUDIO3": "generate-bad-campers-helmet (enhanced)",
+          "AUDIO4": "generate-good-pirates-papertoweltube (enhanced)",
+          "AUDIO5": "generate-bad-shoppers-hanger (enhanced)",
+          "AUDIO6": "generate-good-magicians-featherduster (enhanced)",
+          "AUDIO7": "generate-bad-doctor-broom (enhanced)",
+          "AUDIO8": "generate-good-cooks-brush (enhanced)",
+          "delay1": 9000,
+          "delay2": 9000,
+          "delay3": 9000,
+          "delay4": 9000,
+          "delay5": 9000,
+          "delay6": 9000,
+          "delay7": 9000,
+          "delay8": 9000
+        }
+      ],
+      "commonFrameProperties": {
+        "kind": "exp-lookit-images-audio",
+        "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/master/condition-generate",
+        "audioTypes": ["mp3"],
+        "autoProceed": false,
+        "doRecording": true,
+        "choiceRequired": false,
+        "showPreviousButton": false,
+        "backgroundColor": "white",
+        "allowUserPause": false,
+        "waitForRecordingMessageColor": "black"
+      }
+    },
+    "trialalldone": {
+      "kind": "exp-lookit-video",
+      "video": {
+        "loop": false,
+        "source": "ending",
+        "position": "fill"
+      },
+      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/master/condition-choose",
+      "backgroundColor": "white",
+      "requireVideoCount": 1,
+      "doRecording": false,
+      "videoTypes": ["mp4"],
+      "parentTextBlock": {
+        "emph": true,
+        "css": {
+          "font-size": "13pt",
+          "padding": "0.5em"
+        },
+        "text": "That's the end of the study! If you want to talk to your child about their answers, you can by clicking the links on the last page. Whenever you're ready, click 'Next' to finish up.",
+        "title": "Parents!"
+      },
+      "showPreviousButton": false,
+      "allowUserPause": false
+    },
+    "exit-survey": {
+      "kind": "exp-lookit-exit-survey",
+      "debriefing": {
+        "title": "Thank you for participating!",
+        "blocks": [
+          {
+            "title": "",
+            "text": "This research wouldn't be possible without awesome parents like you."
+          },
+          {
+            "title": "Some Background Information:",
+            "text": "Play, including pretend play, is a common part of early childhood. However, researchers are still studying how play behaviors develop, and how play affects children's learning and development. Because play is so variable across individual children, it can be tricky to carefully measure and study how children think and make decisions during play.\nIn this research, we look at which objects children choose to play pretend with. Do children prefer objects that offer more possibilities for imagining with? Or do they prefer objects that they can very quickly imagine as something else, even if they can only think of one idea?\nTo answer these questions, we are running two studies. This current study measures what ideas children come up with. Another study measures which objects children prefer. By combining the data from both studies, we can better understand how children think about pretend possibilities, and how children choose what to play with. We are also interested in how children's pretend play relates to other aspects of their development, such as language."
+          },
+          {
+            "title": "Compensation:",
+            "text": "To thank you for your participation, we'll be emailing you a $5 Amazon gift card - this should arrive in your inbox within the next week after we confirm your consent video and check that your child is in the age range for this study (If you don't hear from us by then, feel free to reach out!). If you participate again with another child in the age range, you'll receive one gift card per child."
+          },
+
+          {
+            "title": "Questions or Concerns:",
+            "text": "Please do not hesitate to contact Michelle Wong at michellewong@fas.harvard.edu"
+          }
+        ]
+      }
+    }
+  }
+}
