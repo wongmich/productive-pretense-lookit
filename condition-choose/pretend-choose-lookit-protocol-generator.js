@@ -296,22 +296,166 @@ function generateProtocol(child, pastSessions) {
   // NOTE: audio should filenames in baseDir/mp3
   let all_trial_pairings = [
     [
-      "choose-magician-order1-socks-brooms.mp3", "magician", "socks", "broom",
+      "choose-order1-doctor-socks-broom.mp3", "scene1", "socks", "broom",
       11000, 12000,
       [11, 12], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-shopper-order1-hanger-tennisball.mp3", "shopper", "hanger", "tennisball",
+      "choose-order1-shopper-hanger-tennisball.mp3", "scene2", "hanger", "tennisball",
       10000, 12000,
       [10, 11], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-campers-order1-helmet-blanket.mp3", "campers", "helmet", "blanket",
+      "choose-order1-campers-helmet-blanket.mp3", "scene3", "helmet", "blanket",
       11000, 12000,
       [11, 12], [12, 13], [17, 18], [18, 19]
+    ],
+    [
+      "choose-order1-explorers-icescoop-keys.mp3", "scene4", "icecreamscooper", "keys", 
+      11000, 12000,
+      [11, 12], [12, 13], [19, 20], [20, 21]
+    ],
+    [
+      "choose-order1-cooks-hairbrush-stringlights.mp3", "scene5", "brush", "stringlights",
+      11000, 12000,
+      [11, 12], [12, 13], [17, 18], [18, 19]
+    ],
+    [
+      "choose-order1-magicians-sponge-featherduster.mp3", "scene6", "sponge", "featherduster",
+      11000, 12000,
+      [11, 12], [12, 13], [17, 18], [19, 20]
+    ],
+    [
+      "choose-order1-pirates-papertoweltube-frisbee.mp3", "scene7", "papertoweltube", "frisbee",
+      10000, 11000,
+      [10, 11], [11, 12], [17, 18], [18, 19]
+    ],
+    [
+      "choose-order1-fashionshow-vacuumtube-pokerchips.mp3", "scene8", "vacuumtube", "pokerchips",
+      12000, 13000,
+      [12, 13], [13, 14], [19, 20], [20, 21]
+    ],
+    [
+      "choose-order2-musicians-broom-socks.mp3", "2scene1", "broom", "socks",
+      9000, 10000,
+      [9, 10], [10, 11], [15, 16], [16, 16.9]
+    ],
+    [
+      "choose-order2-knights-tennisball-hanger.mp3", "2scene2", "tennisball", "hanger",
+      9000, 10000,
+      [9, 10], [10, 11], [15, 16], [16, 16.9]
+    ],
+    [
+      "choose-order2-astronauts-blanket-helmet.mp3", "2scene3", "blanket", "helmet",
+      9000, 10000,
+      [9, 10], [10, 11], [15, 16], [16, 16.9]
+    ],
+    [
+      "choose-order2-trainstationconductors-keys-icescoop.mp3", "2scene4", "keys", "icecreamscooper",
+      12000, 14000,
+      [12, 13], [14, 15], [20, 21], [21, 21.9]
+    ],
+    [
+      "choose-order2-cowboys-stringlights-hairbrush.mp3", "2scene5", "stringlights", "brush",
+      10000, 11000,
+      [10, 11], [11, 12], [16, 17], [18, 19]
+    ],
+    [
+      "choose-order2-constructionbuilders-featherduster-sponge.mp3", "2scene6", "featherduster", "sponge",
+      11000, 12000,
+      [11, 12], [12, 13], [18, 19], [19, 19.9]
+    ],
+    [
+      "choose-order2-teapartyguests-frisbee-papertoweltube.mp3", "2scene7", "frisbee", "papertoweltube",
+      10000, 12000, 
+      [10, 11], [12, 13], [18, 19], [20, 21]
+    ],
+    [
+      "choose-order2-firefighters-pokerchips-vacuumtube.mp3", "2scene8", "pokerchips", "vacuumtube",
+      12000, 13000,
+      [12, 13], [13, 14], [17, 18], [19, 19.9]
+    ],
+    [
+      "choose-order1-musicians-socks-broom.mp3", "2scene1", "socks", "broom",
+      10000, 11000, 
+      [10, 11], [11, 12], [17, 18], [18, 19]  
+    ],
+    [
+      "choose-order1-knights-hanger-tennisball.mp3", "2scene2", "hanger", "tennisball", 
+      10000, 11000, 
+      [10, 11], [11, 12], [17, 18], [18, 19]
+    ],
+    [
+      "choose-order1-astronauts-helmet-blanket.mp3", "2scene3", "helmet", "blanket",
+      10000, 12000, 
+      [10, 11], [12, 13], [17, 18], [18, 19]
+    ],
+    [
+      "choose-order1-trains-icescoop-keys.mp3", "2scene4", "icecreamscooper", "keys",
+      14000, 15000,
+      [14, 15], [15, 16], [22, 23], [23, 24]
+    ],
+    [
+      "choose-order1-cowboys-hairbrush-stringlights.mp3", "2scene5", "brush", "stringlights",
+      10000, 11000, 
+      [10, 11], [11, 12], 17, 18], [18, 19]
+    ],
+    [
+      "choose-order1-constructionbuilders-sponge-featherduster.mp3", "2scene6", "sponge", "featherduster",
+      12000, 13000,
+      [12, 13], [13, 14], [19, 20], [20, 21]
+    ],
+    [
+      "choose-order1-teaparty-papertoweltube-frisbee.mp3", "2scene7", "papertoweltube", "frisbee",
+      10000, 12000, 
+      [10, 11], [12, 13], [18, 19], [20, 21]
+    ],
+    [
+      "choose-order1-firefighters-vacuumtube-pokerchips.mp3", "2scene8", "vaccumtube", "pokerchips",
+      12000, 13000,
+      [12, 13], [13, 14], [19, 20], [20, 21]
+    ],
+    [
+      "choose-order2-doctors-broom-socks.mp3", "scene1", "broom", "socks",
+      10000, 11000,
+      [10, 11], [11, 12], 16, 17], [17, 18]
+    ],
+    [
+      "choose-order2-shoppers-tennisball-hanger.mp3", "scene2", "tennisball", "hanger",
+      10000, 11000,
+      [10, 11], [11, 12], [16, 17], [17, 18]
+    ],
+    [
+      "choose-order2-campers-blanket-helmet.mp3", "scene3", "blanket", "helmet", 
+      10000, 11000, 
+      [10, 11], [11, 12], [15, 16], [16, 17]
+    ],
+    [
+      "choose-order2-explorers-keys-icescoop.mp3", "scene4", "keys", "icecreamscooper",
+      10000, 12000, 
+      [10, 11, [12, 13], [17, 18], [18, 19]
+    ],
+    [
+      "choose-order2-cooks-stringlights-hairbrush.mp3", "scene5", "stringlights", "brush", 
+      11000, 12000,
+      [11, 12], [12, 13], [16, 17], [18, 18.9]
+    ],
+    [
+      "choose-order2-magicians-featherduster-sponge.mp3", "scene6", "featherduster", "sponge", 
+      11000, 12000,
+      [11, 12], [12, 13], [17, 18], [18, 19]
+    ],
+    [
+      "choose-order2-pirates-frisbee-papertoweltube.mp3", "scene7", "frisbee", "papertoweltube", 
+      9000, 10000,
+      [9, 10], [10, 11], [15.16, 16], [16.4, 17.4]
+    ],
+    [
+      "choose-order2-fashionshowmodels-pokerchips-vacuumtube.mp3", "scene8", "pokerchips", "vacuumtube", 
+      11400, 13090,
+      [11.4, 12.4], [13.09, 14.09], [18.7, 20], [20.1, 21]
     ]
   ]
-
   // Choose a random starting point and order for the stimuli pairings
   let ordered_trial_pairings_0 = shuffle(all_trial_pairings.slice(0, 8))
   let ordered_trial_pairings_1 = shuffle(all_trial_pairings.slice(8, 8))
