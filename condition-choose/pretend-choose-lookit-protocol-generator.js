@@ -318,7 +318,7 @@ function generateProtocol(child, pastSessions) {
       [11, 12], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-cooks-brush-stringlights",
+      "choose-cooks-hairbrush-stringlights",
       11000, 12000,
       [11, 12], [12, 13], [17, 18], [18, 19]
     ],
@@ -328,7 +328,7 @@ function generateProtocol(child, pastSessions) {
       [11, 12], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-explorers-icecreamscooper-keys",
+      "choose-explorers-icescoop-keys",
       11000, 12000,
       [11, 12], [12, 13], [19, 20], [20, 21]
     ],
@@ -389,7 +389,7 @@ function generateProtocol(child, pastSessions) {
       [10, 11], [12, 13], [18, 19], [20, 21]
     ],
     [
-      "choose-trains-keys-icecreamscooper",
+      "choose-trains-keys-icescoop",
       12000, 14000,
       [12, 13], [14, 15], [20, 21], [21.3, 21.9]
     ]]
@@ -400,7 +400,7 @@ function generateProtocol(child, pastSessions) {
       [10, 11], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-cowboys-brush-stringlights",
+      "choose-cowboys-hairbrush-stringlights",
       10000, 11000,
       [10, 11], [11, 12], [17, 18], [18, 19]
     ],
@@ -425,7 +425,7 @@ function generateProtocol(child, pastSessions) {
       [10, 11], [11, 12], [17, 18], [18, 19]
     ],
     [
-      "choose-trains-icecreamscooper-keys",
+      "choose-trains-icescoop-keys",
       14000, 15000,
       [14, 15], [15, 16], [22, 23], [23, 24]
     ],
@@ -441,7 +441,7 @@ function generateProtocol(child, pastSessions) {
       [10, 11], [11, 12], [15, 16], [16, 17]
     ],
     [
-      "choose-cooks-stringlights-brush",
+      "choose-cooks-stringlights-hairbrush",
       11000, 12000,
       [11, 12], [12, 13], [16, 17], [18, 18.9]
     ],
@@ -451,7 +451,7 @@ function generateProtocol(child, pastSessions) {
       [10, 11], [11, 12], [16, 17], [17, 18]
     ],
     [
-      "choose-explorers-keys-icecreamscooper",
+      "choose-explorers-keys-icescoop",
       10000, 12000,
       [10, 11], [12, 13], [17, 18], [18, 19]
     ],
@@ -514,7 +514,7 @@ function generateProtocol(child, pastSessions) {
           "nonChoiceOption": true
         },
         {
-          "id": objectL, //"leftsocks",
+          "id": objectL, //"socks",
           "src": objectL_png,//"socks.png",
           "top": "55.5",
           "left": "0.1",
@@ -533,19 +533,19 @@ function generateProtocol(child, pastSessions) {
       "highlights": [ // take from list
         {
           "range": highlightL1,//[11, 12],
-          "imageId": objectL// "leftsocks"
+          "imageId": objectL// "socks"
         },
         {
           "range": highlightR1,//[12, 13],
-          "imageId": objectR//"rightbroom"
+          "imageId": objectR//"broom"
         },
         {
           "range": highlightL2,//[17, 18],
-          "imageId": objectL//"leftsocks"
+          "imageId": objectL//"socks"
         },
         {
           "range": highlightR2,//[18, 19],
-          "imageId": objectR//"rightbroom"
+          "imageId": objectR//"broom"
         }
       ],
       "parentTextBlock": { // always the same
