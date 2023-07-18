@@ -492,7 +492,13 @@ function generateProtocol(child, pastSessions) {
       ordered_trial_pairings = shuffle(trial_pairings_b2).concat(shuffle(trial_pairings_b1))
   }
 
-  // Create list of 16 trials
+  // Check if objects are repeated on trial 8 & 9
+  if (ordered_trial_pairings[7][0].split('-')[2] == ordered_trial_pairings[8][0].split('-')[3]) {
+    // If yes, remove trial 9 and place at end of the trial list
+    ordered_trial_pairings.push(ordered_trial_pairings.splice(8, 1)[0])
+  }
+
+  // Create list of 16 frames
   for (iTrial = 0; iTrial < 16; iTrial++) {
     // First, extract frame parameters from the trial pairing definition
     let [audio, delayL, delayR, highlightL1, highlightR1, highlightL2, highlightR2] = ordered_trial_pairings[iTrial]
