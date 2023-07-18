@@ -305,7 +305,7 @@ function generateProtocol(child, pastSessions) {
   let frame_sequence = ['video-consent']
   // Now define parameters for test trials
   // each element is a size 7 list:
-  // audio = choose-orderX-scene-object1-object1
+  // audio = choose-scene-objectL-objectR
   // option1_delay, option2_delay
   // option1_hl1, option2_hl1, option1_hl2, option2_hl2
   // NOTE: audio should filenames in baseDir/mp3
@@ -456,7 +456,7 @@ function generateProtocol(child, pastSessions) {
       [10, 11], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-fashionshowmodels-pokerchips-vacuumtube",
+      "choose-fashionshow-pokerchips-vacuumtube",
       11400, 13090,
       [11.4, 12.4], [13.09, 14.09], [18.7, 20], [20.1, 21]
     ],
@@ -497,16 +497,15 @@ function generateProtocol(child, pastSessions) {
     // First, extract frame parameters from the trial pairing definition
     let [audio, delayL, delayR, highlightL1, highlightR1, highlightL2, highlightR2] = ordered_trial_pairings[iTrial]
     let [condition, scene, objectL, objectR] = audio.split('-') // ['choose', 'cowboys', 'brush', 'stringlights']
-    console.log(audio, objectL)
 
     scene_png = 'scene-' + scene + '.png' // magicians.png
-    objectL_png = object1 + '.png' // socks.png
-    objectR_png = object2 + '.png' // socks.png
+    objectL_png = objectL + '.png' // socks.png
+    objectR_png = objectR + '.png' // socks.png
 
     // Use parameters to create this trial frame
     thisTrial = {
       "kind": "exp-lookit-images-audio",
-      "audio": "choosing-doctor (enhanced)", // take from list
+      "audio": audio, // take from list
       "images": [ // take from list: scene, objectL, objectR
         {
           "id": scene,  //"magicians"
