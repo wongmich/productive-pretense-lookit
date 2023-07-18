@@ -301,8 +301,8 @@ function generateProtocol(child, pastSessions) {
   // Start off the frame sequence with config/consent/introduction frames
   // so far, we have 7 initial frames
   // TODO: WHILE TESTING, SKIP INITIAL FRAMES
-  // let frame_sequence = ['video-config', 'video-consent', 'study-preview', 'study-instructions', 'intro-video', 'intro-practice', 'intro-practice-choices']
-  let frame_sequence = ['video-consent']
+  let frame_sequence = ['video-config', 'video-consent', 'study-preview', 'study-instructions', 'intro-video', 'intro-practice', 'intro-practice-choices']
+  //let frame_sequence = ['video-consent']
   // Now define parameters for test trials
   // each element is a size 7 list:
   // audio = choose-scene-objectL-objectR
@@ -514,7 +514,7 @@ function generateProtocol(child, pastSessions) {
           "nonChoiceOption": true
         },
         {
-          "id": objectL, //"socks",
+          "id": objectL + "_left", //"socks",
           "src": objectL_png,//"socks.png",
           "top": "55.5",
           "left": "0.1",
@@ -522,7 +522,7 @@ function generateProtocol(child, pastSessions) {
           "displayDelayMs": delayL//11000
         },
         {
-          "id": objectR,//"rightbroom",
+          "id": objectR + "_right",//"rightbroom",
           "src": objectR_png,//"broom.png",
           "top": "55.5",
           "left": "76",
