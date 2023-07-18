@@ -338,12 +338,12 @@ function generateProtocol(child, pastSessions) {
     [
       "choose-order2-musicians-broom-socks.mp3", "2scene1", "broom", "socks",
       9000, 10000,
-      [9, 10], [10, 11], [15, 16], [16, 16.9]
+      [9, 10], [10, 11], [15, 16], [16.9, 17.7]
     ],
     [
       "choose-order2-knights-tennisball-hanger.mp3", "2scene2", "tennisball", "hanger",
       9000, 10000,
-      [9, 10], [10, 11], [15, 16], [16, 16.9]
+      [9, 10], [10, 11], [15, 16], [16.4, 17.3]
     ],
     [
       "choose-order2-astronauts-blanket-helmet.mp3", "2scene3", "blanket", "helmet",
@@ -353,7 +353,7 @@ function generateProtocol(child, pastSessions) {
     [
       "choose-order2-trainstationconductors-keys-icescoop.mp3", "2scene4", "keys", "icecreamscooper",
       12000, 14000,
-      [12, 13], [14, 15], [20, 21], [21, 21.9]
+      [12, 13], [14, 15], [20, 21], [21.3, 21.9]
     ],
     [
       "choose-order2-cowboys-stringlights-hairbrush.mp3", "2scene5", "stringlights", "brush",
@@ -363,7 +363,7 @@ function generateProtocol(child, pastSessions) {
     [
       "choose-order2-constructionbuilders-featherduster-sponge.mp3", "2scene6", "featherduster", "sponge",
       11000, 12000,
-      [11, 12], [12, 13], [18, 19], [19, 19.9]
+      [11, 12], [12, 13], [18, 19], [19.7, 20.6]
     ],
     [
       "choose-order2-teapartyguests-frisbee-papertoweltube.mp3", "2scene7", "frisbee", "papertoweltube",
@@ -373,7 +373,7 @@ function generateProtocol(child, pastSessions) {
     [
       "choose-order2-firefighters-pokerchips-vacuumtube.mp3", "2scene8", "pokerchips", "vacuumtube",
       12000, 13000,
-      [12, 13], [13, 14], [17, 18], [19, 19.9]
+      [12, 13], [13, 14], [17, 18], [19.2, 20.2]
     ],
     [
       "choose-order1-musicians-socks-broom.mp3", "2scene1", "socks", "broom",
