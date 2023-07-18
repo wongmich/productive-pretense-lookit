@@ -1,5 +1,11 @@
 function generateProtocol(child, pastSessions) {
   // ---- Helper Functions ----
+  // returns random coin flip as true or false
+  function randomBoolean() {
+    return Boolean(Math.floor(Math.random() * 2));
+  }
+
+  // shuffles an array
   function shuffle(array) {
     var shuffled = Ember.$.extend(true, [], array); // deep copy array
     for (var i = array.length - 1; i > 0; i--) {
@@ -60,7 +66,7 @@ function generateProtocol(child, pastSessions) {
           "text": "Before we start, if you'd like to preview the sort of images that your child will see, you can do that now. Importantly, you should watch the sample video without your child."
         }
       ],
-      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/master/condition-choose",
+      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/protocol-generator/condition-choose",
       "stimuli": [
         {
           "video": "PP Stimuli Condition 1",
@@ -150,7 +156,7 @@ function generateProtocol(child, pastSessions) {
       "requireVideoCount": 1,
       "doRecording": false,
       "frameOffsetAfterPause": 0,
-      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/master/condition-choose/",
+      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/protocol-generator/condition-choose/",
       "videoTypes": ["mp4"]
     },
     "intro-practice": {
@@ -158,7 +164,7 @@ function generateProtocol(child, pastSessions) {
       "audio": "warmup_letspractice (enhanced)",
       "images": [
         {
-          "id": "meadowslide",
+          "id": "warmup",
           "src": "introgame.png",
           "position": "fill",
           "nonChoiceOption": true
@@ -167,7 +173,7 @@ function generateProtocol(child, pastSessions) {
       "backgroundColor": "white",
       "autoProceed": true,
       "doRecording": false,
-      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/master/condition-choose/"
+      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/protocol-generator/condition-choose/"
     },
     "intro-practice-choices": {
       "kind": "exp-lookit-images-audio",
@@ -180,7 +186,7 @@ function generateProtocol(child, pastSessions) {
           "nonChoiceOption": true
         },
         {
-          "id": "squirrelchoice",
+          "id": "squirrel",
           "src": "introsquirrel.png",
           "top": "54",
           "left": "76",
@@ -190,7 +196,7 @@ function generateProtocol(child, pastSessions) {
           "feedbackAudio": "warmup_greatSQUIRRELintro (enhanced)"
         },
         {
-          "id": "birdchoice",
+          "id": "bird",
           "src": "introbird.png",
           "top": "55.5",
           "left": "0.1",
@@ -203,11 +209,11 @@ function generateProtocol(child, pastSessions) {
       "highlights": [
         {
           "range": [7, 7.5],
-          "imageId": "squirrelchoice"
+          "imageId": "squirrel"
         },
         {
           "range": [5, 6],
-          "imageId": "birdchoice"
+          "imageId": "bird"
         }
       ],
       "parentTextBlock": {
@@ -223,7 +229,7 @@ function generateProtocol(child, pastSessions) {
       "backgroundColor": "white",
       "autoProceed": false,
       "doRecording": false,
-      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/master/condition-choose/",
+      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/protocol-generator/condition-choose/",
       "nextButtonText": "Next",
       "choiceRequired": true
     },
@@ -239,7 +245,7 @@ function generateProtocol(child, pastSessions) {
       "requireVideoCount": 1,
       "doRecording": false,
       "frameOffsetAfterPause": 0,
-      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/master/condition-choose/",
+      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/protocol-generator/condition-choose/",
       "videoTypes": ["mp4"]
     },
     "exit-survey": {
@@ -257,7 +263,7 @@ function generateProtocol(child, pastSessions) {
           },
           {
             "title": "Compensation:",
-            "text": "To thank you for your participation, we'll be emailing you a $5 Amazon gift card - this should arrive in your inbox within the next week after we confirm your consent video and check that your child is in the age range for this study (If you don't hear from us by then, feel free to reach out!). If you participate again with another child in the age range, you'll receive one gift card per child."
+            "text": "To thank you for your participation, we'll be emailing you a $5 USD Amazon gift card - this should arrive in your inbox within the next week after we confirm your consent video and check that your child is in the age range for this study (If you don't hear from us by then, feel free to reach out!). If you participate again with another child in the age range, you'll receive one gift card per child."
           },
           {
             "title": "Questions or Concerns:",
@@ -265,316 +271,333 @@ function generateProtocol(child, pastSessions) {
           }
         ]
       }
+    },
+    // TODO: update HALFWAY VS DOING-GREAT videos
+    "doing-great": {
+      "kind": "exp-lookit-video",
+      "video": {
+        "loop": false,
+        "position": "fill",
+        "source": "halfwaydone"
+      },
+      "backgroundColor": "white",
+      "autoProceed": false,
+      "showPreviousButton": false,
+      "requireVideoCount": 1,
+      "doRecording": false,
+      "frameOffsetAfterPause": 0,
+      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/protocol-generator/condition-choose/",
+      "videoTypes": ["mp4"]
+    },
+    "halfway-done": {
+      "kind": "exp-lookit-video",
+      "video": {
+        "loop": false,
+        "position": "fill",
+        "source": "halfwaydone"
+      },
+      "backgroundColor": "white",
+      "autoProceed": false,
+      "showPreviousButton": false,
+      "requireVideoCount": 1,
+      "doRecording": false,
+      "frameOffsetAfterPause": 0,
+      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/protocol-generator/condition-choose/",
+      "videoTypes": ["mp4"]
     }
-
   }
 
   // Start off the frame sequence with config/consent/introduction frames
   // so far, we have 7 initial frames
   let frame_sequence = ['video-config', 'video-consent', 'study-preview', 'study-instructions', 'intro-video', 'intro-practice', 'intro-practice-choices']
 
-  // Now add test trials
-  // start at a random point in this list and cycle through across trials.
-
-  // Choose a random starting point and shuffle
-
-  // Define parameters for the single trial
-  theslideid, audio, thescenepng, option_left, image_left, delay_left,
-    option_right, image_right, delay_right,
-    highlight1_left, highlight1_right, highlight2_left, highlight2_right
-
-  choose_explorers_order1_object1_object2.mp3
-  choose - magicians - object1 - object2
-  choose - magicians - object2 - object1
-  choose - explorers - object2 - object1
-
-  //each element is a size 10 list: 
-  // audio, scene, object1, object2,
+  // Now define parameters for test trials
+  // each element is a size 7 list:
+  // audio = choose-orderX-scene-object1-object1.mp3
   // option1_delay, option2_delay
   // option1_hl1, option2_hl1, option1_hl2, option2_hl2
-  // NOTE: object1 and object2 match up to keys in available_images;
   // NOTE: audio should filenames in baseDir/mp3
-  let all_trial_pairings = [
-[
-      "choose-order1-doctor-socks-broom.mp3", "scene1", "socks", "broom",
+  // NOTE: since audio filename includes all other object names, we can just use the audio filename to define the rest of the trial
+  // to reduce chance of typos 
+  let trial_pairings_a1 = [
+    [
+      "choose-campers-helmet-blanket.mp3",
       11000, 12000,
       [11, 12], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-order1-shopper-hanger-tennisball.mp3", "scene2", "hanger", "tennisball",
-      10000, 12000,
-      [10, 11], [12, 13], [17, 18], [18, 19]
-    ],
-    [
-      "choose-order1-campers-helmet-blanket.mp3", "scene3", "helmet", "blanket",
+      "choose-cooks-brush-stringlights.mp3",
       11000, 12000,
       [11, 12], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-order1-explorers-icescoop-keys.mp3", "scene4", "icecreamscooper", "keys", 
+      "choose-doctors-socks-broom.mp3",
+      11000, 12000,
+      [11, 12], [12, 13], [17, 18], [18, 19]
+    ],
+    [
+      "choose-explorers-icecreamscooper-keys.mp3",
       11000, 12000,
       [11, 12], [12, 13], [19, 20], [20, 21]
     ],
     [
-      "choose-order1-cooks-hairbrush-stringlights.mp3", "scene5", "brush", "stringlights",
-      11000, 12000,
-      [11, 12], [12, 13], [17, 18], [18, 19]
+      "choose-fashionshow-vacuumtube-pokerchips.mp3",
+      12000, 13000,
+      [12, 13], [13, 14], [19, 20], [20, 21]
     ],
     [
-      "choose-order1-magicians-sponge-featherduster.mp3", "scene6", "sponge", "featherduster",
+      "choose-magicians-sponge-featherduster.mp3",
       11000, 12000,
       [11, 12], [12, 13], [17, 18], [19, 20]
     ],
     [
-      "choose-order1-pirates-papertoweltube-frisbee.mp3", "scene7", "papertoweltube", "frisbee",
+      "choose-pirates-papertoweltube-frisbee.mp3",
       10000, 11000,
       [10, 11], [11, 12], [17, 18], [18, 19]
     ],
     [
-      "choose-order1-fashionshow-vacuumtube-pokerchips.mp3", "scene8", "vacuumtube", "pokerchips",
-      12000, 13000,
-      [12, 13], [13, 14], [19, 20], [20, 21]
-    ],
+      "choose-shoppers-hanger-tennisball.mp3",
+      10000, 12000,
+      [10, 11], [12, 13], [17, 18], [18, 19]
+    ]]
+  let trial_pairings_a2 = [
     [
-      "choose-order2-musicians-broom-socks.mp3", "2scene1", "broom", "socks",
-      9000, 10000,
-      [9, 10], [10, 11], [15, 16], [16.9, 17.7]
-    ],
-    [
-      "choose-order2-knights-tennisball-hanger.mp3", "2scene2", "tennisball", "hanger",
-      9000, 10000,
-      [9, 10], [10, 11], [15, 16], [16.4, 17.3]
-    ],
-    [
-      "choose-order2-astronauts-blanket-helmet.mp3", "2scene3", "blanket", "helmet",
+      "choose-astronauts-blanket-helmet.mp3",
       9000, 10000,
       [9, 10], [10, 11], [15, 16], [16, 16.9]
     ],
     [
-      "choose-order2-trainstationconductors-keys-icescoop.mp3", "2scene4", "keys", "icecreamscooper",
-      12000, 14000,
-      [12, 13], [14, 15], [20, 21], [21.3, 21.9]
-    ],
-    [
-      "choose-order2-cowboys-stringlights-hairbrush.mp3", "2scene5", "stringlights", "brush",
-      10000, 11000,
-      [10, 11], [11, 12], [16, 17], [18, 19]
-    ],
-    [
-      "choose-order2-constructionbuilders-featherduster-sponge.mp3", "2scene6", "featherduster", "sponge",
+      "choose-constructionbuilders-featherduster-sponge.mp3",
       11000, 12000,
       [11, 12], [12, 13], [18, 19], [19.7, 20.6]
     ],
     [
-      "choose-order2-teapartyguests-frisbee-papertoweltube.mp3", "2scene7", "frisbee", "papertoweltube",
-      10000, 12000, 
-      [10, 11], [12, 13], [18, 19], [20, 21]
+      "choose-cowboys-stringlights-hairbrush.mp3",
+      10000, 11000,
+      [10, 11], [11, 12], [16, 17], [18, 19]
     ],
     [
-      "choose-order2-firefighters-pokerchips-vacuumtube.mp3", "2scene8", "pokerchips", "vacuumtube",
+      "choose-firefighters-pokerchips-vacuumtube.mp3",
       12000, 13000,
       [12, 13], [13, 14], [17, 18], [19.2, 20.2]
     ],
     [
-      "choose-order1-musicians-socks-broom.mp3", "2scene1", "socks", "broom",
-      10000, 11000, 
-      [10, 11], [11, 12], [17, 18], [18, 19]  
+      "choose-knights-tennisball-hanger.mp3",
+      9000, 10000,
+      [9, 10], [10, 11], [15, 16], [16.4, 17.3]
     ],
     [
-      "choose-order1-knights-hanger-tennisball.mp3", "2scene2", "hanger", "tennisball", 
-      10000, 11000, 
-      [10, 11], [11, 12], [17, 18], [18, 19]
+      "choose-musicians-broom-socks.mp3",
+      9000, 10000,
+      [9, 10], [10, 11], [15, 16], [16.9, 17.7]
     ],
     [
-      "choose-order1-astronauts-helmet-blanket.mp3", "2scene3", "helmet", "blanket",
-      10000, 12000, 
+      "choose-teaparty-frisbee-papertoweltube.mp3",
+      10000, 12000,
+      [10, 11], [12, 13], [18, 19], [20, 21]
+    ],
+    [
+      "choose-trains-keys-icecreamscooper.mp3",
+      12000, 14000,
+      [12, 13], [14, 15], [20, 21], [21.3, 21.9]
+    ]]
+  let trial_pairings_b1 = [
+    [
+      "choose-astronauts-helmet-blanket.mp3",
+      10000, 12000,
       [10, 11], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-order1-trains-icescoop-keys.mp3", "2scene4", "icecreamscooper", "keys",
+      "choose-cowboys-brush-stringlights.mp3",
+      10000, 11000,
+      [10, 11], [11, 12], [17, 18], [18, 19]
+    ],
+    [
+      "choose-constructionbuilders-sponge-featherduster.mp3",
+      12000, 13000,
+      [12, 13], [13, 14], [19, 20], [20, 21]
+    ],
+    [
+      "choose-firefighters-vacuumtube-pokerchips.mp3",
+      12000, 13000,
+      [12, 13], [13, 14], [19, 20], [20, 21]
+    ],
+    [
+      "choose-musicians-socks-broom.mp3",
+      10000, 11000,
+      [10, 11], [11, 12], [17, 18], [18, 19]
+    ],
+    [
+      "choose-knights-hanger-tennisball.mp3",
+      10000, 11000,
+      [10, 11], [11, 12], [17, 18], [18, 19]
+    ],
+    [
+      "choose-trains-icecreamscooper-keys.mp3",
       14000, 15000,
       [14, 15], [15, 16], [22, 23], [23, 24]
     ],
     [
-      "choose-order1-cowboys-hairbrush-stringlights.mp3", "2scene5", "brush", "stringlights",
-      10000, 11000, 
-      [10, 11], [11, 12], 17, 18], [18, 19]
-    ],
-    [
-      "choose-order1-constructionbuilders-sponge-featherduster.mp3", "2scene6", "sponge", "featherduster",
-      12000, 13000,
-      [12, 13], [13, 14], [19, 20], [20, 21]
-    ],
-    [
-      "choose-order1-teaparty-papertoweltube-frisbee.mp3", "2scene7", "papertoweltube", "frisbee",
-      10000, 12000, 
+      "choose-teaparty-papertoweltube-frisbee.mp3",
+      10000, 12000,
       [10, 11], [12, 13], [18, 19], [20, 21]
-    ],
+    ]]
+  let trial_pairings_b2 = [
     [
-      "choose-order1-firefighters-vacuumtube-pokerchips.mp3", "2scene8", "vaccumtube", "pokerchips",
-      12000, 13000,
-      [12, 13], [13, 14], [19, 20], [20, 21]
-    ],
-    [
-      "choose-order2-doctors-broom-socks.mp3", "scene1", "broom", "socks",
+      "choose-campers-blanket-helmet.mp3",
       10000, 11000,
-      [10, 11], [11, 12], 16, 17], [17, 18]
-    ],
-    [
-      "choose-order2-shoppers-tennisball-hanger.mp3", "scene2", "tennisball", "hanger",
-      10000, 11000,
-      [10, 11], [11, 12], [16, 17], [17, 18]
-    ],
-    [
-      "choose-order2-campers-blanket-helmet.mp3", "scene3", "blanket", "helmet", 
-      10000, 11000, 
       [10, 11], [11, 12], [15, 16], [16, 17]
     ],
     [
-      "choose-order2-explorers-keys-icescoop.mp3", "scene4", "keys", "icecreamscooper",
-      10000, 12000, 
-      [10, 11, [12, 13], [17, 18], [18, 19]
-    ],
-    [
-      "choose-order2-cooks-stringlights-hairbrush.mp3", "scene5", "stringlights", "brush", 
+      "choose-cooks-stringlights-brush.mp3",
       11000, 12000,
       [11, 12], [12, 13], [16, 17], [18, 18.9]
     ],
     [
-      "choose-order2-magicians-featherduster-sponge.mp3", "scene6", "featherduster", "sponge", 
+      "choose-doctors-broom-socks.mp3",
+      10000, 11000,
+      [10, 11], [11, 12], [16, 17], [17, 18]
+    ],
+    [
+      "choose-explorers-keys-icecreamscooper.mp3",
+      10000, 12000,
+      [10, 11], [12, 13], [17, 18], [18, 19]
+    ],
+    [
+      "choose-fashionshowmodels-pokerchips-vacuumtube.mp3",
+      11400, 13090,
+      [11.4, 12.4], [13.09, 14.09], [18.7, 20], [20.1, 21]
+    ],
+    [
+      "choose-magicians-featherduster-sponge.mp3",
       11000, 12000,
       [11, 12], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-order2-pirates-frisbee-papertoweltube.mp3", "scene7", "frisbee", "papertoweltube", 
+      "choose-pirates-frisbee-papertoweltube.mp3",
       9000, 10000,
       [9, 10], [10, 11], [15.16, 16], [16.4, 17.4]
     ],
     [
-      "choose-order2-fashionshowmodels-pokerchips-vacuumtube.mp3", "scene8", "pokerchips", "vacuumtube", 
-      11400, 13090,
-      [11.4, 12.4], [13.09, 14.09], [18.7, 20], [20.1, 21]
-    ]
-  ]
+      "choose-shoppers-tennisball-hanger.mp3",
+      10000, 11000,
+      [10, 11], [11, 12], [16, 17], [17, 18]
+    ]]
 
-  // Choose a random starting point and order for the stimuli pairings
-  let ordered_trial_pairings_0 = shuffle(all_trial_pairings.slice(0, 8))
-  let ordered_trial_pairings_1 = shuffle(all_trial_pairings.slice(8, 8))
+  // Now implement counterbalancing logic and define ordered trial sequence
+  const counterbalanced_stimuliset = randomBoolean() ? 'a' : 'b' // choose one
+  const counterbalanced_blockorder = randomBoolean() ? '1' : '2' // choose one
+  const counterbalance_group = counterbalanced_stimuliset + counterbalanced_blockorder
+  var ordered_trial_pairings = [] // This will be the sequenced list of 16 trials
+  switch (counterbalance_group) {
+    case 'a1':
+      ordered_trial_pairings = shuffle(trial_pairings_a1).concat(shuffle(trial_pairings_a2))
+    case 'a2':
+      ordered_trial_pairings = shuffle(trial_pairings_a2).concat(shuffle(trial_pairings_a1))
+    case 'b1':
+      ordered_trial_pairings = shuffle(trial_pairings_b1).concat(shuffle(trial_pairings_b2))
+    case 'b2':
+      ordered_trial_pairings = shuffle(trial_pairings_b2).concat(shuffle(trial_pairings_b1))
+  }
 
   // Create list of 16 trials
-  for (iBlock = 0; iBlock < 2, iBlock++;) {
-    for (iTrial = 0; iTrial < 8, iTrial++;) {
-      // First, extract frame parameters from the trial pairing definition
-      let trial_pairing = ordered_trial_pairings_1[iTrial]
-      let audio = trial_pairing[0]
-      let scene = trial_pairing[1]
-      let object1 = trial_pairing[2]
-      let object2 = trial_pairing[3]
+  for (iTrial = 0; iTrial < 16, iTrial++;) {
+    // First, extract frame parameters from the trial pairing definition
+    let [audio, delayL, delayR, highlightL1, highlightR1, highlightL2, highlightR2] = ordered_trial_pairings[iTrial]
+    let [, scene, objectL, objectR] = audio.slice(-4).split('-') // ['choose', 'cowboys', 'brush', 'stringlights']
 
-      // Then, define highlight timings
-      scene_png = scene + '.png', // magicians.png
-        option_left_png = option1 + '.png', // socks.png
-        option_right_png = option2 + '.png', // socks.png
-        delay_left = option1_delay, //11000
-        highlight1_left = option1_hl1,//[11, 12],
-        highlight2_left = option1_hl2,//[17, 18],
-        delay_right = option2_delay,//12000,
-        highlight1_right = option2_hl1,//[12, 13],
-        highlight2_right = option2_hl2,//[18, 19],
+    scene_png = 'scene-' + scene + '.png' // magicians.png
+    objectL_png = object1 + '.png' // socks.png
+    objectR_png = object2 + '.png' // socks.png
 
-        // Use parameters to create trial frame
-        thisTrial = {
-          "kind": "exp-lookit-images-audio",
-          "audio": "choosing-doctor (enhanced)", // take from list
-          "images": [ // take from list: scene, left, right
-            {
-              "id": theslide, //"slide1",
-              "src": thescenepng, //"scene1.png",
-              "position": "fill",
-              "nonChoiceOption": true
-            },
-            {
-              "id": option_left,//"leftsocks",
-              "src": image_left,//"socks.png",
-              "top": "55.5",
-              "left": "0.1",
-              "width": "24.3",
-              "displayDelayMs": delay_left//11000
-            },
-            {
-              "id": option_right,//"rightbroom",
-              "src": image_right,//"broom.png",
-              "top": "55.5",
-              "left": "76",
-              "width": "24.3",
-              "displayDelayMs": delay_right//12000
-            }
-          ],
-          "highlights": [ // take from list
-            {
-              "range": highlight1_left,//[11, 12],
-              "imageId": option_left// "leftsocks"
-            },
-            {
-              "range": highlight1_right,//[12, 13],
-              "imageId": option_right//"rightbroom"
-            },
-            {
-              "range": highlight2_left,//[17, 18],
-              "imageId": option_left//"leftsocks"
-            },
-            {
-              "range": highlight2_right,//[18, 19],
-              "imageId": option_right//"rightbroom"
-            }
-          ],
-          "parentTextBlock": { // always the same
-            "css": {
-              "font-size": "13pt",
-              "padding": "0.5em"
-            },
-            "title": "For Parents",
-            "text": "Please just say 'Okay!' when your child answers - don't give any hints or say whether you agree! You can always click 'Replay' to repeat the question. \nIf your child can click on their own, let them click one of the answer choices, then click the Next button. If they can't click on their own, you can click for them."
-          },
-          "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/master/condition-choose/",
-          "autoProceed": false,
-          "maximizeDisplay": true,
-          "pageColor": "white",
-          "backgroundColor": "white",
-          "doRecording": false,
-          "choiceRequired": true,
-          "showPreviousButton": false,
-          "pauseWhenExitingFullscreen": true
+    // Use parameters to create this trial frame
+    thisTrial = {
+      "kind": "exp-lookit-images-audio",
+      "audio": "choosing-doctor (enhanced)", // take from list
+      "images": [ // take from list: scene, objectL, objectR
+        {
+          "id": scene,  //"magicians"
+          "src": scene_png, //"scene-magicians.png",
+          "position": "fill",
+          "nonChoiceOption": true
+        },
+        {
+          "id": objectL, //"leftsocks",
+          "src": objectL_png,//"socks.png",
+          "top": "55.5",
+          "left": "0.1",
+          "width": "24.3",
+          "displayDelayMs": delayL//11000
+        },
+        {
+          "id": objectR,//"rightbroom",
+          "src": objectR_png,//"broom.png",
+          "top": "55.5",
+          "left": "76",
+          "width": "24.3",
+          "displayDelayMs": delayR//12000
         }
-
-
-
-
+      ],
+      "highlights": [ // take from list
+        {
+          "range": highlightL1,//[11, 12],
+          "imageId": objectL// "leftsocks"
+        },
+        {
+          "range": highlightR1,//[12, 13],
+          "imageId": objectR//"rightbroom"
+        },
+        {
+          "range": highlightL2,//[17, 18],
+          "imageId": objectL//"leftsocks"
+        },
+        {
+          "range": highlightR2,//[18, 19],
+          "imageId": objectR//"rightbroom"
+        }
+      ],
+      "parentTextBlock": { // always the same
+        "css": {
+          "font-size": "13pt",
+          "padding": "0.5em"
+        },
+        "title": "For Parents",
+        "text": "Please just say 'Okay!' when your child answers - don't give any hints or say whether you agree! You can always click 'Replay' to repeat the question. \nIf your child can click on their own, let them click one of the answer choices, then click the Next button. If they can't click on their own, you can click for them."
+      },
+      "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/protocol-generator/condition-choose/",
+      "autoProceed": false,
+      "maximizeDisplay": true,
+      "pageColor": "white",
+      "backgroundColor": "white",
+      "doRecording": false,
+      "choiceRequired": true,
+      "showPreviousButton": false,
+      "pauseWhenExitingFullscreen": true
     }
 
-    // Store this frame in frames and in the sequence
-    frameId = 'test-trial-' + (iTrial + 1)
+    // Store this trial in frame definitions and frame sequence
+    frameId = 'test-trial-' + (iTrial + 1) // remember iTrial is zero-indexed
     frames[frameID] = thisTrial;
     frame_sequence.push(frameId);
 
-    // After the fourth trial, push the feedback trial as well
-    if (iTrial % 4 == 3) {
-      // insert feedback trial
-
-      iTrial++
+    // Add motivation videos.
+    // halfway done!
+    if (iTrial == 7) {
+      frame_sequence.push('halfway-done')
+    }
+    // "you're doing great!"
+    if (iTrial == 3 || iTrial == 11) {
+      frame_sequence.push('doing-great')
     }
   }
-}
 
+  // Finish up the frame sequence with the end video and exit survey
+  frame_sequence = frame_sequence.concat(['end-video', 'exit-survey'])
 
-
-// Finish up the frame sequence with the end video and exit survey
-frame_sequence = frame_sequence.concat(['end-video', 'exit-survey'])
-
-// Return a study protocol with "frames" and "sequence" fields just like when
-// defining the protocol in JSON only
-return {
-  frames: frames,
-  sequence: frame_sequence
-};
+  // Return a study protocol with "frames" and "sequence" fields just like when
+  // defining the protocol in JSON only
+  return {
+    frames: frames,
+    sequence: frame_sequence
+  }
 }
