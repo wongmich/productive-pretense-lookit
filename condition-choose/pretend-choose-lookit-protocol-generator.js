@@ -17,15 +17,6 @@ function generateProtocol(child, pastSessions) {
     return shuffled;
   }
 
-  // Returns a random element of an array, and removes that element from the array
-  function pop_random(array) {
-    if (array.length) {
-      let randIndex = Math.floor(Math.random() * array.length);
-      return array.splice(randIndex, 1)[0];
-    }
-    return null;
-  }
-
   // ---- Define non-test trial frames
 
   let frames = {
@@ -309,11 +300,12 @@ function generateProtocol(child, pastSessions) {
 
   // Start off the frame sequence with config/consent/introduction frames
   // so far, we have 7 initial frames
-  let frame_sequence = ['video-config', 'video-consent', 'study-preview', 'study-instructions', 'intro-video', 'intro-practice', 'intro-practice-choices']
-
+  // TODO: WHILE TESTING, SKIP INITIAL FRAMES
+  // let frame_sequence = ['video-config', 'video-consent', 'study-preview', 'study-instructions', 'intro-video', 'intro-practice', 'intro-practice-choices']
+  let frame_sequence = ['video-consent']
   // Now define parameters for test trials
   // each element is a size 7 list:
-  // audio = choose-orderX-scene-object1-object1.mp3
+  // audio = choose-orderX-scene-object1-object1
   // option1_delay, option2_delay
   // option1_hl1, option2_hl1, option1_hl2, option2_hl2
   // NOTE: audio should filenames in baseDir/mp3
@@ -321,165 +313,165 @@ function generateProtocol(child, pastSessions) {
   // to reduce chance of typos 
   let trial_pairings_a1 = [
     [
-      "choose-campers-helmet-blanket.mp3",
+      "choose-campers-helmet-blanket",
       11000, 12000,
       [11, 12], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-cooks-brush-stringlights.mp3",
+      "choose-cooks-brush-stringlights",
       11000, 12000,
       [11, 12], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-doctors-socks-broom.mp3",
+      "choose-doctors-socks-broom",
       11000, 12000,
       [11, 12], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-explorers-icecreamscooper-keys.mp3",
+      "choose-explorers-icecreamscooper-keys",
       11000, 12000,
       [11, 12], [12, 13], [19, 20], [20, 21]
     ],
     [
-      "choose-fashionshow-vacuumtube-pokerchips.mp3",
+      "choose-fashionshow-vacuumtube-pokerchips",
       12000, 13000,
       [12, 13], [13, 14], [19, 20], [20, 21]
     ],
     [
-      "choose-magicians-sponge-featherduster.mp3",
+      "choose-magicians-sponge-featherduster",
       11000, 12000,
       [11, 12], [12, 13], [17, 18], [19, 20]
     ],
     [
-      "choose-pirates-papertoweltube-frisbee.mp3",
+      "choose-pirates-papertoweltube-frisbee",
       10000, 11000,
       [10, 11], [11, 12], [17, 18], [18, 19]
     ],
     [
-      "choose-shoppers-hanger-tennisball.mp3",
+      "choose-shoppers-hanger-tennisball",
       10000, 12000,
       [10, 11], [12, 13], [17, 18], [18, 19]
     ]]
   let trial_pairings_a2 = [
     [
-      "choose-astronauts-blanket-helmet.mp3",
+      "choose-astronauts-blanket-helmet",
       9000, 10000,
       [9, 10], [10, 11], [15, 16], [16, 16.9]
     ],
     [
-      "choose-constructionbuilders-featherduster-sponge.mp3",
+      "choose-constructionbuilders-featherduster-sponge",
       11000, 12000,
       [11, 12], [12, 13], [18, 19], [19.7, 20.6]
     ],
     [
-      "choose-cowboys-stringlights-hairbrush.mp3",
+      "choose-cowboys-stringlights-hairbrush",
       10000, 11000,
       [10, 11], [11, 12], [16, 17], [18, 19]
     ],
     [
-      "choose-firefighters-pokerchips-vacuumtube.mp3",
+      "choose-firefighters-pokerchips-vacuumtube",
       12000, 13000,
       [12, 13], [13, 14], [17, 18], [19.2, 20.2]
     ],
     [
-      "choose-knights-tennisball-hanger.mp3",
+      "choose-knights-tennisball-hanger",
       9000, 10000,
       [9, 10], [10, 11], [15, 16], [16.4, 17.3]
     ],
     [
-      "choose-musicians-broom-socks.mp3",
+      "choose-musicians-broom-socks",
       9000, 10000,
       [9, 10], [10, 11], [15, 16], [16.9, 17.7]
     ],
     [
-      "choose-teaparty-frisbee-papertoweltube.mp3",
+      "choose-teaparty-frisbee-papertoweltube",
       10000, 12000,
       [10, 11], [12, 13], [18, 19], [20, 21]
     ],
     [
-      "choose-trains-keys-icecreamscooper.mp3",
+      "choose-trains-keys-icecreamscooper",
       12000, 14000,
       [12, 13], [14, 15], [20, 21], [21.3, 21.9]
     ]]
   let trial_pairings_b1 = [
     [
-      "choose-astronauts-helmet-blanket.mp3",
+      "choose-astronauts-helmet-blanket",
       10000, 12000,
       [10, 11], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-cowboys-brush-stringlights.mp3",
+      "choose-cowboys-brush-stringlights",
       10000, 11000,
       [10, 11], [11, 12], [17, 18], [18, 19]
     ],
     [
-      "choose-constructionbuilders-sponge-featherduster.mp3",
+      "choose-constructionbuilders-sponge-featherduster",
       12000, 13000,
       [12, 13], [13, 14], [19, 20], [20, 21]
     ],
     [
-      "choose-firefighters-vacuumtube-pokerchips.mp3",
+      "choose-firefighters-vacuumtube-pokerchips",
       12000, 13000,
       [12, 13], [13, 14], [19, 20], [20, 21]
     ],
     [
-      "choose-musicians-socks-broom.mp3",
+      "choose-musicians-socks-broom",
       10000, 11000,
       [10, 11], [11, 12], [17, 18], [18, 19]
     ],
     [
-      "choose-knights-hanger-tennisball.mp3",
+      "choose-knights-hanger-tennisball",
       10000, 11000,
       [10, 11], [11, 12], [17, 18], [18, 19]
     ],
     [
-      "choose-trains-icecreamscooper-keys.mp3",
+      "choose-trains-icecreamscooper-keys",
       14000, 15000,
       [14, 15], [15, 16], [22, 23], [23, 24]
     ],
     [
-      "choose-teaparty-papertoweltube-frisbee.mp3",
+      "choose-teaparty-papertoweltube-frisbee",
       10000, 12000,
       [10, 11], [12, 13], [18, 19], [20, 21]
     ]]
   let trial_pairings_b2 = [
     [
-      "choose-campers-blanket-helmet.mp3",
+      "choose-campers-blanket-helmet",
       10000, 11000,
       [10, 11], [11, 12], [15, 16], [16, 17]
     ],
     [
-      "choose-cooks-stringlights-brush.mp3",
+      "choose-cooks-stringlights-brush",
       11000, 12000,
       [11, 12], [12, 13], [16, 17], [18, 18.9]
     ],
     [
-      "choose-doctors-broom-socks.mp3",
+      "choose-doctors-broom-socks",
       10000, 11000,
       [10, 11], [11, 12], [16, 17], [17, 18]
     ],
     [
-      "choose-explorers-keys-icecreamscooper.mp3",
+      "choose-explorers-keys-icecreamscooper",
       10000, 12000,
       [10, 11], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-fashionshowmodels-pokerchips-vacuumtube.mp3",
+      "choose-fashionshowmodels-pokerchips-vacuumtube",
       11400, 13090,
       [11.4, 12.4], [13.09, 14.09], [18.7, 20], [20.1, 21]
     ],
     [
-      "choose-magicians-featherduster-sponge.mp3",
+      "choose-magicians-featherduster-sponge",
       11000, 12000,
       [11, 12], [12, 13], [17, 18], [18, 19]
     ],
     [
-      "choose-pirates-frisbee-papertoweltube.mp3",
+      "choose-pirates-frisbee-papertoweltube",
       9000, 10000,
       [9, 10], [10, 11], [15.16, 16], [16.4, 17.4]
     ],
     [
-      "choose-shoppers-tennisball-hanger.mp3",
+      "choose-shoppers-tennisball-hanger",
       10000, 11000,
       [10, 11], [11, 12], [16, 17], [17, 18]
     ]]
@@ -501,10 +493,11 @@ function generateProtocol(child, pastSessions) {
   }
 
   // Create list of 16 trials
-  for (iTrial = 0; iTrial < 16, iTrial++;) {
+  for (iTrial = 0; iTrial < 16; iTrial++) {
     // First, extract frame parameters from the trial pairing definition
     let [audio, delayL, delayR, highlightL1, highlightR1, highlightL2, highlightR2] = ordered_trial_pairings[iTrial]
-    let [, scene, objectL, objectR] = audio.slice(-4).split('-') // ['choose', 'cowboys', 'brush', 'stringlights']
+    let [condition, scene, objectL, objectR] = audio.split('-') // ['choose', 'cowboys', 'brush', 'stringlights']
+    console.log(audio, objectL)
 
     scene_png = 'scene-' + scene + '.png' // magicians.png
     objectL_png = object1 + '.png' // socks.png
@@ -577,7 +570,7 @@ function generateProtocol(child, pastSessions) {
 
     // Store this trial in frame definitions and frame sequence
     frameId = 'test-trial-' + (iTrial + 1) // remember iTrial is zero-indexed
-    frames[frameID] = thisTrial;
+    frames[frameId] = thisTrial;
     frame_sequence.push(frameId);
 
     // Add motivation videos.
