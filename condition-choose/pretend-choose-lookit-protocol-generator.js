@@ -263,13 +263,12 @@ function generateProtocol(child, pastSessions) {
         ]
       }
     },
-    // TODO: update HALFWAY VS DOING-GREAT videos
-    "doing-great": {
+    "lets-keep-going": {
       "kind": "exp-lookit-video",
       "video": {
         "loop": false,
         "position": "fill",
-        "source": "halfwaydone"
+        "source": "letskeepgoing"
       },
       "backgroundColor": "white",
       "autoProceed": false,
@@ -585,7 +584,7 @@ function generateProtocol(child, pastSessions) {
     }
     // "you're doing great!"
     if (iTrial == 3 || iTrial == 11) {
-      frame_sequence.push('doing-great')
+      frame_sequence.push('lets-keep-going')
     }
   }
 
