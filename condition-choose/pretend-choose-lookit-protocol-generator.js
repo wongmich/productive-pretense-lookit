@@ -539,19 +539,19 @@ function generateProtocol(child, pastSessions) {
       "highlights": [ // take from list
         {
           "range": highlightL1,//[11, 12],
-          "imageId": objectL// "socks"
+          "imageId": objectL + "_left"// "socks"
         },
         {
           "range": highlightR1,//[12, 13],
-          "imageId": objectR//"broom"
+          "imageId": objectR + "_right"//"broom"
         },
         {
           "range": highlightL2,//[17, 18],
-          "imageId": objectL//"socks"
+          "imageId": objectL + "_left"//"socks"
         },
         {
           "range": highlightR2,//[18, 19],
-          "imageId": objectR//"broom"
+          "imageId": objectR + "_right"//"broom"
         }
       ],
       "parentTextBlock": { // always the same
