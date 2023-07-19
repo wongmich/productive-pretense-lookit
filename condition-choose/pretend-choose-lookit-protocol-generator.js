@@ -299,14 +299,14 @@ function generateProtocol(child, pastSessions) {
 
   // Start off the frame sequence with config/consent/introduction frames
   // so far, we have 7 initial frames
-  // TODO: WHILE TESTING, SKIP INITIAL FRAMES
+  // NOTE: WHILE TESTING, SKIP INITIAL FRAMES by using an empty list []
   let frame_sequence = ['video-config', 'video-consent', 'study-preview', 'study-instructions', 'intro-video', 'intro-practice', 'intro-practice-choices']
-  //let frame_sequence = ['video-consent']
   // Now define parameters for test trials
   // each element is a size 7 list:
-  // audio = choose-scene-objectL-objectR
-  // option1_delay, option2_delay
-  // option1_hl1, option2_hl1, option1_hl2, option2_hl2
+  // [ audio = choose-scene-objectL-objectR
+  //   objectL_delay, objectR_delay
+  //   objectL_hl1, objectR_hl1, objectL_hl2, objectR_hl2
+  // ]
   // NOTE: audio should filenames in baseDir/mp3
   // NOTE: since audio filename includes all other object names, we can just use the audio filename to define the rest of the trial
   // to reduce chance of typos 
