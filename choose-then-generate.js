@@ -1,9 +1,4 @@
-// Video recording 
-// Start record before choose practice / end after choose 8
-// Start record before choose 9 / end after choose 16
-// Record for generate frames individually
 function generateProtocol(child, pastSessions) {
-  var IAMTESTING = true;
   // ---- Helper Functions ----
   // returns random coin flip as true or false
   function randomBoolean() {
@@ -238,7 +233,8 @@ function generateProtocol(child, pastSessions) {
       "backgroundColor": "white",
       "autoProceed": false,
       "nextButtonText": "Next",
-      "choiceRequired": true
+      "choiceRequired": true,
+      "doRecording": true
     },
     // GENERATE INTRO FRAMES
     "generate-gameintro": {
@@ -254,7 +250,7 @@ function generateProtocol(child, pastSessions) {
       "autoProceed": false,
       "showPreviousButton": false,
       "requireVideoCount": 1,
-      "doRecording": false,
+      "doRecording": true,
       "frameOffsetAfterPause": 0,
     },
     "generate-warmup-letspractice": {
@@ -272,7 +268,7 @@ function generateProtocol(child, pastSessions) {
       ],
       "backgroundColor": "white",
       "autoProceed": true,
-      "doRecording": false,
+      "doRecording": true,
     },
     "generate-warmup-feedback": {
       "kind": "exp-lookit-images-audio",
@@ -374,9 +370,7 @@ function generateProtocol(child, pastSessions) {
   // so far, we have 7 initial frames
   // TODO: WHILE TESTING, SKIP INITIAL FRAMES by using an empty list []
   let frame_sequence = []
-  if (!IAMTESTING) {
-    frame_sequence = ['video-config', 'video-consent', 'study-preview', 'study-instructions', 'choose-game-intro', 'choose-warmup-letspractice', 'choose-warmup-whichwould']
-  }
+  // frame_sequence = ['video-config', 'video-consent', 'study-preview', 'study-instructions', 'choose-game-intro', 'choose-warmup-letspractice', 'choose-warmup-whichwould']
 
   // Now define parameters for test trials
   // each element is a size 7 list:
@@ -557,13 +551,17 @@ function generateProtocol(child, pastSessions) {
   var ordered_choose_pairings = [] // This will be the sequenced list of 8 choose trials
   switch (counterbalance_group) {
     case 'a1':
-      ordered_choose_pairings = shuffle(choose_pairings_a1)
+      ordered_choose_pairings = shuffle(choose_pairings_a1);
+      break;
     case 'a2':
-      ordered_choose_pairings = shuffle(choose_pairings_a2)
+      ordered_choose_pairings = shuffle(choose_pairings_a2);
+      break;
     case 'b1':
-      ordered_choose_pairings = shuffle(choose_pairings_b1)
+      ordered_choose_pairings = shuffle(choose_pairings_b1);
+      break;
     case 'b2':
-      ordered_choose_pairings = shuffle(choose_pairings_b2)
+      ordered_choose_pairings = shuffle(choose_pairings_b2);
+      break;
   }
 
   // As we generate the choose frames, also fill in the scene-object pairs to use in generate
@@ -649,17 +647,15 @@ function generateProtocol(child, pastSessions) {
       "pauseWhenExitingFullscreen": true
     }
 
-    if (!IAMTESTING) { // IF TESTING, DON'T ADD TO FRAME SEQUENCE
-      // Store this trial in frame definitions and frame sequence
-      frameId = 'choose-trial-' + (iTrial + 1) // remember iTrial is zero-indexed
-      frames[frameId] = thisTrial;
-      frame_sequence.push(frameId);
+    // Store this trial in frame definitions and frame sequence
+    frameId = 'choose-trial-' + (iTrial + 1) // remember iTrial is zero-indexed
+    frames[frameId] = thisTrial;
+    frame_sequence.push(frameId);
 
-      // Add motivation videos.
-      // halfway done!
-      if (iTrial == 3) {
-        frame_sequence.push('halfway-done')
-      }
+    // Add motivation videos.
+    // halfway done!
+    if (iTrial == 3) {
+      frame_sequence.push('halfway-done')
     }
   }
 
