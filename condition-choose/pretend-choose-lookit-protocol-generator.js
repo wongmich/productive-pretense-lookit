@@ -24,20 +24,31 @@ function generateProtocol(child, pastSessions) {
       "kind": "exp-video-config",
       "troubleshootingIntro": "If you're having any trouble or would like us to walk you through setup, please email michellewong@fas.harvard.edu"
     },
+
     "video-consent": {
       "kind": "exp-lookit-video-consent",
       "template": "consent_005",
       "PIName": "Michelle Wong",
       "institution": "Harvard University",
-      "PIContact": "michellewong@fas.harvard.edu",
-      "purpose": "We're interested in how children think about pretend play and what influences their pretend play preferences. Recent research has shown that children at play often invent novel goals, but we don't know how children actually decide which goals and which pretend scenarios to play with. In this study, we want to learn more about how children choose what to play, and how they creatively exercise their imagination.",
-      "procedures": "Your child will see pictures of different places and objects to play pretend with. We will ask your child to choose which object they would rather play with.",
-      "risk_statement": "There are no expected risks if you participate in the study.",
-      "payment": "After you finish the study, we will email you a $5 Amazon gift card within approximately one week. To be eligible for the gift card, your child must meet all eligibility criteria (e.g., be in the age range for this study), you need to submit a valid consent statement, and we need to see that there is a child with you. Additionally, your child may only participate in this study once in order to be eligible for compensation. There may be multiple versions of this study posted over time, but only your first participation will count for compensation. However, even if you do not finish the whole study or we are not able to use your child's data, we will still send a gift card! There are no other direct benefits to you or your child from participating, but we hope you will enjoy the experience.",
-      "datause": "We are primarily interested in the answers your child provides.",
+      "PIContact": "Michelle Wong at michellewong@fas.harvard.edu",
+      "purpose_header": "Key Information",
+      "purpose": "The following is a short summary of this study to help you decide whether or not you want your child to be a part of this study. More detailed information is listed later on in this form. \n<b>Why is my child being invited to take part in a research study?</b> We invite your child to take part in a research study because they are of a specific age which is relevant to study the developmental construct of interest. \n <b>What should I know about a research study?</b> An experimenter will verbally explain this research study to you and your child. Whether or not you take part is up to you and your child. Your child’s participation is completely voluntary. You and your child can choose not to take part. You and your child can agree to take part and later change your mind. You and your child’s decision will not be held against you. You and your child’s refusal to participate will not result in any consequences or any loss of benefits that you and your child are otherwise entitled to receive. You and your child can ask all the questions you want before you decide. \n<b>Why is this research being done?</b> The purpose of the research is to understand how children are able to learn so much from their interactions with objects, events, and other people. We are currently studying individuals’ learning and development in multiple domains, including causal, visual, language and memory. \n<b>How long will the research last and what will my child need to do?</b> This study will take approximately 15 minutes to complete. During the session, your child may watch a video clip, play a game on the computer, read a book, hear a story, or look at pictures. They may be asked to make judgements, answer questions (such as making predictions and providing explanations), learn from and teach others (including you, their parent), observe events, and perform interactive tasks with objects on the screen while the experimenter observes their behavior. There are no 'right or wrong' responses to any of these questions or tasks—we simply want to find out how children of this age understand and explore objects and situations. We MAY measure where your child is looking through your web camera while your child is participating in these games. Please note that you and your child are NOT being evaluated academically or psychologically, we are simply conducting basic research. \n<b>Is there any way being in this study could be bad for my child?</b> We don’t believe there are any risks for your child from participating in this research. \n<b>Will being in this study help my child in any way?</b> There are no direct benefits to your child from your taking part in this research. We cannot promise any benefits to others from your child taking part in this research. However, possible benefits to others include furthering the field’s understanding of cognitive development.",
+      "additional_segments": [
+        {
+          "title": "Data removal",
+          "text": "The person in charge of the research study or the sponsor can remove your child from the research study without your approval. Possible reasons for removal include instances where the participant does not meet the eligibility criteria for the study, which may be determined by their responses to one or more of our questions during the research."
+        },
+        {
+          "title": "What else do I need to know?",
+          "text": "This research is being funded by the Templeton Foundation, NSF, the James F. McDonnell Foundation, the Jacobs Foundation, the Mind, Brain, and Behavior initiative at Harvard, and funds awarded to Elizabeth Bonawitz from the Harvard Graduate School of Education."
+        }],
+      "procedures": "\nYour child will see pictures of different places and objects to play pretend with. We will ask your child to choose which object they would rather play with.",
+      "risk_statement": "We don’t believe there are any risks for your child from participating in this research.",
+      "payment": "After you finish the study, we will email you a $5 Amazon.com (USD) gift card within approximately one week. To be eligible for the gift card, your child must meet all eligibility criteria (e.g., be in the age range for this study), you need to submit a valid consent statement, and we need to see that there is a child with you. Additionally, your child may only participate in this study once in order to be eligible for compensation. \nYour child can leave the research at any time and it will not be held against your child. If you or your child wishes to stop, we will end the session without penalty, and we will still send a gift card. \nThere are no other direct benefits to your child from your taking part in this research, though we hope you will enjoy the experience! Possible benefits to others include furthering the field's understanding of cognitive development.",
+      "datause": "We are primarily interested in the ratings your child provides. A research assistant may also watch your videos to code any spontaneous speech your child generates during the task. \nEfforts will be made to limit the use and disclosure of your child’s Personal Information, including research participation and any information you provide on this form, to people who have a need to review this information. We cannot promise complete secrecy. Organizations that may inspect and copy your child’s information include the IRB and other representatives of this organization. If identifiers are removed from your child’s identifiable private information that is collected during this research, that information could be used for future research studies or distributed to another investigator for future research studies without you or your child’s additional informed consent.",
       "include_databrary": true,
       "gdpr": false,
-      "research_rights_statement": "You are not waiving any legal claims, rights or remedies because of your participation in this research study.  If you feel you have been treated unfairly, or you have questions regarding your rights as a research subject, you may contact Harvard's Committee on the Use of Human Subjects (cuhs@harvard.edu)."
+      "research_rights_statement": "You are not waiving any legal claims, rights or remedies because of your participation in this research study.  If you have questions, concerns, or complaints, you can contact our Principal Investigator, Dr. Elizabeth Bonawitz [elizabeth_bonawitz@gse.harvard.edu] or our lab manager Jiayi Wang [jiayiwang@fas.harvard.edu]. If you feel you have been treated unfairly, or you have questions regarding your rights as a research subject, you may contact Harvard's Committee on the Use of Human Subjects (cuhs@harvard.edu)."
     },
     "study-preview": {
       "kind": "exp-lookit-stimuli-preview",
@@ -425,8 +436,8 @@ function generateProtocol(child, pastSessions) {
     ],
     [
       "choose-trains-icescoop-keys",
-      14000, 15000,
-      [14, 15], [15, 16], [22, 23], [23, 24]
+      11000, 13000,
+      [11, 12], [13, 14], [19, 20], [20, 21]
     ],
     [
       "choose-teaparty-papertoweltube-frisbee",
@@ -442,7 +453,7 @@ function generateProtocol(child, pastSessions) {
     [
       "choose-cooks-stringlights-hairbrush",
       11000, 12000,
-      [11, 12], [12, 13], [16, 17], [18, 18.9]
+      [11, 12], [12, 13], [16, 17], [18, 18.7]
     ],
     [
       "choose-doctors-broom-socks",
