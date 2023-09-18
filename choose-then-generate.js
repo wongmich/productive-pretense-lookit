@@ -22,7 +22,7 @@ function generateProtocol(child, pastSessions) {
 
     // ---- Define non-test trial frames
 
-    let frames = {
+    var frames = {
         "video-config": {
             "kind": "exp-video-config",
             "troubleshootingIntro": "If you're having any trouble or would like us to walk you through setup, please email michellewong@fas.harvard.edu"
@@ -369,8 +369,8 @@ function generateProtocol(child, pastSessions) {
     // Start off the frame sequence with config/consent/introduction frames
     // so far, we have 7 initial frames
     // TODO: WHILE TESTING, SKIP INITIAL FRAMES by using an empty list []
-    frame_sequence = []
-    // frame_sequence = ['video-config', 'video-consent', 'study-preview', 'study-instructions', 'choose-game-intro', 'choose-warmup-letspractice', 'choose-warmup-whichwould']
+    //frame_sequence = []
+    frame_sequence = ['video-config', 'video-consent', 'study-preview', 'study-instructions', 'choose-gameintro', 'choose-warmup-letspractice', 'choose-warmup-whichwould']
 
     // Now define parameters for test trials
     // each element is a size 7 list:
@@ -381,7 +381,7 @@ function generateProtocol(child, pastSessions) {
     // NOTE: audio should filenames in baseDir/mp3
     // NOTE: since audio filename includes all other object names, we can just use the audio filename to define the rest of the trial
     // to reduce chance of typos 
-    let choose_pairings_a1 = [
+    var choose_pairings_a1 = [
         [
             "choose-campers-helmet-blanket",
             11000, 12000,
@@ -418,11 +418,11 @@ function generateProtocol(child, pastSessions) {
             [10, 11], [11, 12], [17, 18], [18, 19]
         ],
         [
-            "choose-shoppers-hanger-tennisball",
+            "choose-shoppers-hanger-yellowball",
             10000, 12000,
             [10, 11], [12, 13], [17, 18], [18, 19]
         ]]
-    let choose_pairings_a2 = [
+    var choose_pairings_a2 = [
         [
             "choose-astronauts-blanket-helmet",
             9000, 10000,
@@ -444,7 +444,7 @@ function generateProtocol(child, pastSessions) {
             [12, 13], [13, 14], [17, 18], [19.2, 20.2]
         ],
         [
-            "choose-knights-tennisball-hanger",
+            "choose-knights-yellowball-hanger",
             9000, 10000,
             [9, 10], [10, 11], [15, 16], [16.4, 17.3]
         ],
@@ -463,7 +463,7 @@ function generateProtocol(child, pastSessions) {
             12000, 14000,
             [12, 13], [14, 15], [20, 21], [21.3, 21.9]
         ]]
-    let choose_pairings_b1 = [
+    var choose_pairings_b1 = [
         [
             "choose-astronauts-helmet-blanket",
             10000, 12000,
@@ -490,7 +490,7 @@ function generateProtocol(child, pastSessions) {
             [10, 11], [11, 12], [17, 18], [18, 19]
         ],
         [
-            "choose-knights-hanger-tennisball",
+            "choose-knights-hanger-yellowball",
             10000, 11000,
             [10, 11], [11, 12], [17, 18], [18, 19]
         ],
@@ -504,7 +504,7 @@ function generateProtocol(child, pastSessions) {
             10000, 12000,
             [10, 11], [12, 13], [18, 19], [20, 21]
         ]]
-    let choose_pairings_b2 = [
+    var choose_pairings_b2 = [
         [
             "choose-campers-blanket-helmet",
             10000, 11000,
@@ -541,7 +541,7 @@ function generateProtocol(child, pastSessions) {
             [9, 10], [10, 11], [15.16, 16], [16.4, 17.4]
         ],
         [
-            "choose-shoppers-tennisball-hanger",
+            "choose-shoppers-yellowball-hanger",
             10000, 11000,
             [10, 11], [11, 12], [16, 17], [17, 18]
         ]]
@@ -571,18 +571,18 @@ function generateProtocol(child, pastSessions) {
     // Create list of 8 choose frames
     for (iTrial = 0; iTrial < 8; iTrial++) {
         // First, extract frame parameters from the trial pairing definition
-        // let [audio, delayL, delayR, highlightL1, highlightR1, highlightL2, highlightR2] = ordered_choose_pairings[iTrial]
-        // let [condition, scene, objectL, objectR] = audio.split('-') // ['choose', 'cowboys', 'brush', 'stringlights']
-        let audio = ordered_choose_pairings[iTrial][0]
-        let delayL = ordered_choose_pairings[iTrial][1]
-        let delayR = ordered_choose_pairings[iTrial][2]
-        let highlightL1 = ordered_choose_pairings[iTrial][3]
-        let highlightR1 = ordered_choose_pairings[iTrial][4]
-        let highlightL2 = ordered_choose_pairings[iTrial][5]
-        let highlightR2 = ordered_choose_pairings[iTrial][6]
-        let scene = audio.split('-')[1]
-        let objectL = audio.split('-')[2]
-        let objectR = audio.split('-')[3]
+        // var [audio, delayL, delayR, highlightL1, highlightR1, highlightL2, highlightR2] = ordered_choose_pairings[iTrial]
+        // var [condition, scene, objectL, objectR] = audio.split('-') // ['choose', 'cowboys', 'brush', 'stringlights']
+        var audio = ordered_choose_pairings[iTrial][0]
+        var delayL = ordered_choose_pairings[iTrial][1]
+        var delayR = ordered_choose_pairings[iTrial][2]
+        var highlightL1 = ordered_choose_pairings[iTrial][3]
+        var highlightR1 = ordered_choose_pairings[iTrial][4]
+        var highlightL2 = ordered_choose_pairings[iTrial][5]
+        var highlightR2 = ordered_choose_pairings[iTrial][6]
+        var scene = audio.split('-')[1]
+        var objectL = audio.split('-')[2]
+        var objectR = audio.split('-')[3]
 
         // Also store scene-object pairs for generate trials
         generate_stimuli_L.push([scene, objectL]) // first 8 pairings
@@ -670,7 +670,7 @@ function generateProtocol(child, pastSessions) {
         }
     }
 
-    frame_sequence.push('generate-game-intro')
+    frame_sequence.push('generate-gameintro')
 
     // // Now define parameters for generate trials
     // // Each scene appears once in the first 8 trials and once in second 8 trials
@@ -698,7 +698,7 @@ function generateProtocol(child, pastSessions) {
         thisGenerateTrial = {
             "kind": "exp-lookit-images-audio",
             "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/choose-then-generate/",
-            "audio": audio, // take from list
+            "audio": 'generate-' + scene + '-' + object, // take from list
             "images": [
                 {
                     "id": scene,  //"magicians"
@@ -739,7 +739,7 @@ function generateProtocol(child, pastSessions) {
 
         // Add motivation videos.
         // halfway done!
-        if (iTrial == 3) {
+        if (iTrial == 7) {
             frame_sequence.push('halfway-done')
         }
         // "you're doing great!" 
