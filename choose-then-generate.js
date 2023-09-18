@@ -23,6 +23,30 @@ function generateProtocol(child, pastSessions) {
     // ---- Define non-test trial frames
 
     var frames = {
+        "welcome": {
+            "kind": "exp-lookit-text",
+            "blocks": [
+                {
+                    "emph": true,
+                    "title": "Thank you for your interest in our study!",
+                    "text": "Reminder: Your child does not need to be with you until the videos begin."
+                },
+                {
+                    "text": "Here's a quick summary of what's about to happen:",
+                    "listblocks": [
+                        {
+                            "text": "1. Webcam Setup and Video Consent. First, we'll be checking that your webcam is working. Then you and your child will give your consent to participate in this research."
+                        },
+                        {
+                            "text": "2. Study Overview. Here, you will learn a little more about what your child will be doing in this study, along with some other important details about your role in the game."
+                        },
+                        { "text": "3. When you click the 'Start the game!' button on the Study Overview page, the study will begin! This study will take about 15 minutes in total." }
+                    ]
+                },
+                { "text": "Thank you so much for helping us with our science! We hope you and your child have fun." }
+            ],
+            "showPreviousButton": false
+        },
         "video-config": {
             "kind": "exp-video-config",
             "troubleshootingIntro": "If you're having any trouble or would like us to walk you through setup, please email michellewong@fas.harvard.edu"
@@ -58,16 +82,19 @@ function generateProtocol(child, pastSessions) {
                     "text": "Reminder: Your child does not need to be with you until the videos begin. Now, let's go over what will happen in the study!"
                 },
                 {
-                    "text": "In Part 1, we will present 16 different pretend play scenarios. In each scene, your child will choose which object they would rather play pretend with."
+                    "text": "There are two parts to this study:",
+                    "listblocks": [
+                        { "text": "1. Your child will first play a Choosing game. We will present 8 different pretend play scenarios. In each scene, your child will choose which object they would rather pretend with." },
+
+                        {
+                            "text": "2. Then, your child will play an Ideas game with the same images and objects. We'll ask your child to think out loud, and share as many ideas as they can for what they could pretend those objects to be."
+                        }]
                 },
                 {
-                    "text": "In Part 2, we will present 8 of the previously shown pretend scenarios. In each scene, your child will generate ideas for what a given object could be in the pretend world."
-                },
-                {
-                    "text": "Before we start, if you'd like to preview the sort of images that your child will see, you can do that now. Importantly, you should watch the sample video without your child."
+                    "text": "\nBefore we start, if you'd like, you can preview the sort of images that your child will see. Importantly, you should watch these example videos without your child."
                 }
             ],
-            "showPreviousButton": true,
+            "showPreviousButton": false,
             "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/choose-then-generate/",
             "videoTypes": ["webm", "mp4"],
             "stimuli": [
@@ -77,7 +104,7 @@ function generateProtocol(child, pastSessions) {
                 },
                 {
                     "video": "PP Stimuli Preview Generate",
-                    "caption": "In Part 2, your child will generate ideas for what a given object could be. Here's an example of what the images and prompts will look like:"
+                    "caption": "In Part 2, your child will generate as many ideas for what they could pretend an object to be. Here's an example of what the images and prompts will look like:"
                 }
             ]
         },
@@ -129,21 +156,26 @@ function generateProtocol(child, pastSessions) {
                     }
                 }
             ],
-            "showWebcam": true,
-            "webcamBlocks": [
-                {
-                    "title": "Camera position",
-                    "listblocks": [
-                        {
-                            "text": "Try to position yourselves so that we can see your child throughout the study."
-                        },
-                        {
-                            "text": "Don't worry if your child isn't looking at the screen the entire time! What's important is that the child is in front of the screen the whole time and can make the choices. We made it as short as we could, in the hopes your child won't get bored!"
-                        }
-                    ]
-                }
-            ],
+            "showWebcam": false,
             "nextButtonText": "Next"
+        },
+        "webcam-config-quality": {
+            "kind": "exp-video-config-quality",
+            "title": "Webcam set up",
+            "introText": "We'll be analyzing what your child chooses and what they say -- but only if we can hear them clearly! Please check each of the following to ensure we're able to use your video:",
+            "requireItemConfirmation": true,
+            "completedItemText": "Did it!",
+            "instructionBlocks": [
+                {
+                    "text": "<strong>Make sure the webcam you're using is roughly centered</strong> relative to this monitor. This makes it much easier for us to tell what your child is looking at.",
+                    "image": {
+                        "src": "https://s3.amazonaws.com/lookitcontents/website/centering.png",
+                        "alt": "Example images of using centered external webcam on monitor or built-in webcam on laptop."
+                    }
+                }],
+            "requireTestVideo": true,
+            "showRecordMenu": true,
+            "recordingInstructionText": "You should be able to see your camera view above. You can create and view a short recording to see how your setup looks."
         },
         // CHOOSE INTRO FRAMES
         "choose-gameintro": {
@@ -370,7 +402,7 @@ function generateProtocol(child, pastSessions) {
     // so far, we have 7 initial frames
     // TODO: WHILE TESTING, SKIP INITIAL FRAMES by using an empty list []
     //frame_sequence = []
-    frame_sequence = ['video-config', 'video-consent', 'study-preview', 'study-instructions', 'choose-gameintro', 'choose-warmup-letspractice', 'choose-warmup-whichwould']
+    frame_sequence = ['welcome', 'video-config', 'video-consent', 'study-preview', 'study-instructions', 'choose-gameintro', 'choose-warmup-letspractice', 'choose-warmup-whichwould']
 
     // Now define parameters for test trials
     // each element is a size 7 list:
@@ -703,14 +735,14 @@ function generateProtocol(child, pastSessions) {
                 {
                     "id": scene,  //"magicians"
                     "src": scene_png, //"scene-magicians.png",
-                    "top": "13.5",
-                    "left": "35",
-                    "width": "60"
+                    "width": 80,
+                    "left": 0,
+                    "top": 15
                 },
                 {
                     "id": object, //
                     "src": object_png, //
-                    "position": "left",
+                    "position": "right",
                     "displayDelayMs": 9000
                 }],
             "parentTextBlock": {
