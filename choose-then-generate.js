@@ -159,23 +159,53 @@ function generateProtocol(child, pastSessions) {
             "showWebcam": false,
             "nextButtonText": "Next"
         },
-        "webcam-config-quality": {
+        "video-quality-checklist": {
             "kind": "exp-video-config-quality",
-            "title": "Webcam set up",
+            "title": "It's time to get your child and get in positions!",
             "introText": "We'll be analyzing what your child chooses and what they say -- but only if we can hear them clearly! Please check each of the following to ensure we're able to use your video:",
             "requireItemConfirmation": true,
             "completedItemText": "Did it!",
             "instructionBlocks": [
                 {
-                    "text": "<strong>Make sure the webcam you're using is roughly centered</strong> relative to this monitor. This makes it much easier for us to tell what your child is looking at.",
+                    "title": "Center your webcam if needed",
+                    "text": "<strong>Make sure the webcam you're using is roughly centered</strong> relative to this monitor. This makes it much easier for us to see your video.",
                     "image": {
                         "src": "https://s3.amazonaws.com/lookitcontents/website/centering.png",
                         "alt": "Example images of using centered external webcam on monitor or built-in webcam on laptop."
                     }
-                }],
-            "requireTestVideo": true,
-            "showRecordMenu": true,
-            "recordingInstructionText": "You should be able to see your camera view above. You can create and view a short recording to see how your setup looks."
+                },
+                {
+                    "title": "Make sure you can clearly see your child's face",
+                    "text": "Take a few moments to get settled and make sure your child's face is clearly visible in the webcam preview to the right. You may need to adjust the webcam angle or turn on a light to make sure their face is visible."
+                },
+                {
+                    "title": "When you're ready",
+                    "text": "The green button down below will start the game. Press the button once you and your child are ready to go!"
+                }
+            ],
+            "requireTestVideo": false,
+            "showRecordMenu": true
+        },
+        "webcam-display-break": {
+            "kind": "exp-lookit-webcam-display",
+            "blocks": [
+                {
+                    "title": "Let's take a quick break",
+                    "text": "We're all done with the first half of the study! Before continuing,",
+                    "listblocks": [
+                        {
+                            "text": "Please check that your child is still visible."
+                        },
+                        {
+                            "text": "You can make some silly faces!"
+                        }
+                    ]
+                }
+            ],
+            "nextButtonText": "Next",
+            "showPreviousButton": false,
+            "displayFullscreenOverride": true,
+            "startRecordingAutomatically": false
         },
         // CHOOSE INTRO FRAMES
         "choose-gameintro": {
@@ -402,7 +432,7 @@ function generateProtocol(child, pastSessions) {
     // so far, we have 7 initial frames
     // TODO: WHILE TESTING, SKIP INITIAL FRAMES by using an empty list []
     //frame_sequence = []
-    frame_sequence = ['welcome', 'video-config', 'video-consent', 'study-preview', 'study-instructions', 'choose-gameintro', 'choose-warmup-letspractice', 'choose-warmup-whichwould']
+    frame_sequence = ['welcome', 'video-config', 'video-consent', 'study-preview', 'study-instructions', 'video-quality-checklist', 'choose-gameintro', 'choose-warmup-letspractice', 'choose-warmup-whichwould']
 
     // Now define parameters for test trials
     // each element is a size 7 list:
@@ -702,6 +732,7 @@ function generateProtocol(child, pastSessions) {
         }
     }
 
+    frame_sequence.push('webcam-display-break')
     frame_sequence.push('generate-gameintro')
 
     // // Now define parameters for generate trials
@@ -778,7 +809,6 @@ function generateProtocol(child, pastSessions) {
         if (iTrial == 3 || iTrial == 11) {
             frame_sequence.push('lets-keep-going')
         }
-
     }
 
     // // Finish up the frame sequence with the end video and exit survey
