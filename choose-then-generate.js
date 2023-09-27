@@ -243,7 +243,7 @@ function generateProtocol(child, pastSessions) {
         "choose-warmup-whichwould": {
             "kind": "exp-lookit-images-audio",
             "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/choose-then-generate/",
-            "audio": "choose_warmup_whichwould",
+            "audio": "choose_warmup_letspractice",
             "images": [
                 {
                     "id": "choose-warmupgamebg",
@@ -257,7 +257,7 @@ function generateProtocol(child, pastSessions) {
                     "top": "54",
                     "left": "76",
                     "width": "24.3",
-                    "displayDelayMs": 7000,
+                    "displayDelayMs": 8200,
                     "correct": true,
                     "feedbackAudio": "choose_warmup_greatSQUIRRELintro"
                 },
@@ -267,18 +267,18 @@ function generateProtocol(child, pastSessions) {
                     "top": "55.5",
                     "left": "0.1",
                     "width": "24.3",
-                    "displayDelayMs": 5000,
+                    "displayDelayMs": 9200,
                     "correct": true,
                     "feedbackAudio": "choose_warmup_greatBIRDintro"
                 }
             ],
             "highlights": [
                 {
-                    "range": [7, 7.5],
+                    "range": [8, 8.8],
                     "imageId": "squirrel"
                 },
                 {
-                    "range": [5, 6],
+                    "range": [9, 9.8],
                     "imageId": "bird"
                 }
             ],
@@ -430,9 +430,9 @@ function generateProtocol(child, pastSessions) {
 
     // Start off the frame sequence with config/consent/introduction frames
     // so far, we have 7 initial frames
-    // TODO: WHILE TESTING, SKIP INITIAL FRAMES by using an empty list []
+    // WHILE TESTING, SKIP INITIAL FRAMES by using an empty list []
     //frame_sequence = []
-    frame_sequence = ['welcome', 'video-config', 'video-consent', 'study-preview', 'study-instructions', 'video-quality-checklist', 'choose-gameintro', 'choose-warmup-letspractice', 'choose-warmup-whichwould']
+    frame_sequence = ['welcome', 'video-config', 'video-consent', 'study-preview', 'study-instructions', 'video-quality-checklist', 'choose-gameintro', 'choose-warmup-whichwould']
 
     // Now define parameters for test trials
     // each element is a size 7 list:
