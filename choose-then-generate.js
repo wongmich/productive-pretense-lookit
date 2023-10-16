@@ -410,14 +410,30 @@ function generateProtocol(child, pastSessions) {
             "doRecording": false,
             "frameOffsetAfterPause": 0
         },
-        "halfway-done": {
+        "halfway-done-choose": {
             "kind": "exp-lookit-video",
             "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/choose-then-generate/",
             "videoTypes": ["mp4"],
             "video": {
                 "loop": false,
                 "position": "fill",
-                "source": "halfwaydone"
+                "source": "halfwaydone-choose"
+            },
+            "backgroundColor": "white",
+            "autoProceed": false,
+            "showPreviousButton": false,
+            "requireVideoCount": 1,
+            "doRecording": false,
+            "frameOffsetAfterPause": 0
+        },
+        "halfway-done-generate": {
+            "kind": "exp-lookit-video",
+            "baseDir": "https://raw.githubusercontent.com/wongmich/productive-pretense-lookit/choose-then-generate/",
+            "videoTypes": ["mp4"],
+            "video": {
+                "loop": false,
+                "position": "fill",
+                "source": "halfwaydone-generate"
             },
             "backgroundColor": "white",
             "autoProceed": false,
@@ -728,7 +744,7 @@ function generateProtocol(child, pastSessions) {
         // Add motivation videos.
         // halfway done!
         if (iTrial == 3) {
-            frame_sequence.push('halfway-done')
+            frame_sequence.push('halfway-done-choose')
         }
     }
 
@@ -803,7 +819,7 @@ function generateProtocol(child, pastSessions) {
         // Add motivation videos.
         // halfway done!
         if (iTrial == 7) {
-            frame_sequence.push('halfway-done')
+            frame_sequence.push('halfway-done-generate')
         }
         // "you're doing great!" 
         if (iTrial == 3 || iTrial == 11) {
