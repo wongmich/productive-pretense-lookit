@@ -707,7 +707,7 @@ function generateProtocol(child, pastSessions) {
                     "font-size": "13pt",
                     "padding": "0.5em"
                 },
-                "title": "For Parents",
+                "title": "For Parents (Picture " + (iTrial + 1) + " of 8)",
                 "text": "Please just say 'Okay!' when your child answers - don't give any hints or say whether you agree! You can always click 'Replay' to repeat the question. \nIf your child can click on their own, let them click one of the answer choices, then click the Next button. If they can't click on their own, you can click for them."
             },
             "autoProceed": false,
@@ -781,7 +781,7 @@ function generateProtocol(child, pastSessions) {
                     "font-size": "13pt",
                     "padding": "0.5em"
                 },
-                "title": "For Parents",
+                "title": "For Parents (Picture " + (iTrial + 1) + " of 16)",
                 "text": "Please just say 'Okay!' when your child answers - don't give any hints or say whether you agree!\nIf your child pauses for more than a few seconds, please ask them: ''Is there anything else or are you all done?'' You can repeat this for every pause."
             },
 
